@@ -1,0 +1,10 @@
+int indexx;
+String name;
+String age;
+String breed;
+double width;
+double height;
+String dogUserId;
+String imageURL;
+String imageUrl;
+bool favorite=false;
