@@ -4,6 +4,8 @@ import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/model/buyer_model.dart';
 import 'package:dbdummy/model/general_model.dart';
 import 'package:dbdummy/model/sqflite_model.dart';
+import 'package:connectivity/connectivity.dart';
+
 import 'package:dbdummy/screens/confirmadoption.dart';
 import 'package:dbdummy/services/firebasestore.dart';
 import 'package:dbdummy/utils/color_services.dart';

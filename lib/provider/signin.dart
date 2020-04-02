@@ -1,6 +1,6 @@
 import 'package:dbdummy/model/sigin_model.dart';
-import 'package:dbdummy/screens/signupsignin/tabcontroller.dart';
-import 'package:dbdummy/screens/signupsignin/widget/alert.dart';
+// import 'package:dbdummy/screens/signupsignin/tabcontroller.dart';
+// import 'package:dbdummy/screens/signupsignin/widget/alert.dart';
 import 'package:dbdummy/screens/signupsignin/widget/signin.dart';
 import 'package:dbdummy/services/firebaselogin.dart';
 import 'package:dbdummy/services/sharedprefs_services.dart';

@@ -42,9 +42,10 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
   Map<String, String> userInformation = <String, String>{
       "userAge": buyerForm.userAge,
       "userOccupation": buyerForm.occupation,
-      // "userWorkingHours":buyerForm.,
+      "userFamilyMembers":buyerForm.familyMembers,
       "workType" : buyerForm.wfh,
       "numberOfPets": buyerForm.numberofPets,
+      "petInformation": userPetDetails.text,
       "UID": uid,
     };
     acceptorCollection.document(uid).setData(userInformation).then((_){
@@ -136,6 +137,10 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
                                "display": "Buisnessman",
                                "value": "Buisnessman",
                                         },
+                                        {
+                               "display": "Homemaker",
+                               "value": "Homemaker",
+                                        },
                                         ],
                                         textField: 'display',
                                         valueField: 'value',
@@ -150,65 +155,12 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
                                buyerForm.occupation = value;
                                         });
                                 },
-                               titleText: 'Select your age',
+                               titleText: 'Select your occupation',
                                hintText: 'Please choose one',
                                
                                         ),
                             ),
 
-                            // Container(
-                            //   padding: EdgeInsets.all(15),
-                            //   child: TextFormField(
-                            //             decoration: InputDecoration(
-                            //               hintText: 'Enter your age',
-                            //             ),
-                            //             controller: userAge,
-                            //             autovalidate: buyerForm.validateUserAge,
-                            //             validator: (value) {
-                            //               return value.isEmpty ? nullage : null;
-                            //             },
-                            //             onEditingComplete: () {
-                            //               setState(() {
-                            //                 buyerForm.validateUserAge = true;
-                            //               });
-                            //             },
-                            //   ),
-                            // ),
-                            // Container(padding: EdgeInsets.all(15),
-                            //                               child: TextFormField(
-                            //           decoration: InputDecoration(
-                            //             hintText: 'Enter your Occupation',
-                            //           ),
-                            //           controller: userWork,
-                            //           autovalidate: buyerForm.occupation,
-                            //           validator: (value) {
-                            //             return value.isEmpty ? nullage : null;
-                            //           },
-                            //           onEditingComplete: () {
-                            //             setState(() {
-                            //               buyerForm.validateUserWork = true;
-                            //             });
-                            //           },
-                            //   ),
-                            // ),
-                            // Container(padding: EdgeInsets.all(15),
-                            //                               child: TextFormField(
-                            //           decoration: InputDecoration(
-                                        
-                            //             hintText: 'Enter your working hours',
-                            //           ),
-                            //           controller: userWorkingHours,
-                            //           autovalidate: buyerForm.validateWorkingHours,
-                            //           validator: (value) {
-                            //             return value.isEmpty ? nullage : null;
-                            //           },
-                            //           onEditingComplete: () {
-                            //             setState(() {
-                            //               buyerForm.validateWorkingHours = true;
-                            //             });
-                            //           },
-                            //   ),
-                            // ),
                             Container(
                               padding: EdgeInsets.all(15),
                               child: DropDownFormField(
@@ -239,6 +191,57 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
              
                       ),
                             ),
+
+
+Container(
+                              padding: EdgeInsets.all(15),
+                                  child: DropDownFormField(
+                               dataSource: [{
+                              "display": "0",
+             "value": "0",
+                      },
+                      {
+             "display": "1",
+             "value": "1",
+                      },
+                        {
+             "display": "2",
+             "value": "2",
+                      },
+                        {
+             "display": "3",
+             "value": "3",
+                      },
+                        {
+             "display": "4",
+             "value": "4",
+                      },
+                        {
+             "display": "4+",
+             "value": "4+",
+                      },
+                                        ],
+                                        textField: 'display',
+                                        valueField: 'value',
+                                        value: buyerForm.familyMembers,
+                                // onSaved: (value) {
+                                //     setState(() {
+                                //    _myActivity = value;
+                                //     });
+                                // },
+                                onChanged: (value) {
+                                        setState(() {
+                               buyerForm.familyMembers = value;
+                               
+                                        });
+                                },
+                               titleText: 'How many people are their in your family?',
+                               hintText: 'Please choose one',
+                               
+                                        ),
+                            ),
+
+
                      
                             Container(
                               padding: EdgeInsets.all(15),

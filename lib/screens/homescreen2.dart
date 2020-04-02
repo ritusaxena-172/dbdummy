@@ -118,7 +118,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
           GestureDetector(
             onTap: () {
               getUID();
-              Navigator.pushNamed(context, Routes().acceptorScreen);
+              Navigator.pushNamed(context, Routes().petDisplay);
             },
             child: Stack(
               children: <Widget>[

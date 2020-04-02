@@ -11,4 +11,5 @@ class Routes {
   String temp = '/temp';
   String acceptorScreen='/acceptorScreen';
   String finalBuyer='/finalBuyer';
+String petDisplay='/petDisplay';
 }

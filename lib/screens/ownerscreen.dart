@@ -27,6 +27,31 @@ class OwnerScreen extends StatefulWidget {
 class _OwnerScreenState extends State<OwnerScreen> {
 
 
+
+void insertingDtaFirebase() async {
+  // upload
+  print('Inside insertingDtaFirebase');
+  print('uid is still $uid');
+  Map<String, String> petInformation = <String, String>{
+    "uid": uid,
+    "petName": petName.text,
+    "petAge": petAge.text,
+    "petBreed": petBreed.text,
+    "petGender": petGender.text,
+    "petDescription": petDescription.text,
+    "ImageUrl": imageUrl,
+  };
+  petCollection.document(uid).setData(petInformation).then((_){
+     print('data set ${petName.text}');
+                            petName.clear();
+                            petAge.clear();
+                            petBreed.clear();
+                            petGender.clear();
+                            petDescription.clear();
+  });
+}
+
+
 Future uploadFile() async {    
     print('inside upload function');
     StorageReference reference = FirebaseStorage.instance.ref().child("user_input/${petName.text}");
@@ -40,7 +65,8 @@ Future uploadFile() async {
       print('url after downloading is $imageUrl');
     });
     try {
-         insertingDtaFirebase();
+      getUID().then((_){insertingDtaFirebase();});
+         
          } catch (e) {
           print(e.message);
          }
@@ -215,8 +241,9 @@ Future uploadFile() async {
                   color: firstcolor,
                   shape: buttonborder,
                   onPressed: () {
+                    
                     uploadFile();
-                    onPressOwner(context);
+                    // onPressOwner(context);
                     // _dbDog.deleteTable();
                     //Navigator.pushNamed(context, Routes().homeScreen);
                     // onPressOwner2(context);

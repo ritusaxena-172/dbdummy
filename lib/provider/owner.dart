@@ -1,34 +1,34 @@
-import 'package:dbdummy/model/buyer_model.dart';
-import 'package:dbdummy/model/ownerscreen_model.dart';
-import 'package:dbdummy/model/signup_model.dart';
-import 'package:dbdummy/model/sqflite_model.dart';
+// import 'package:dbdummy/model/buyer_model.dart';
+// import 'package:dbdummy/model/ownerscreen_model.dart';
+// import 'package:dbdummy/model/signup_model.dart';
+// import 'package:dbdummy/model/sqflite_model.dart';
 import 'package:dbdummy/routes/routes.dart';
-import 'package:dbdummy/screens/buyserscreen.dart';
+// import 'package:dbdummy/screens/buyserscreen.dart';
 import 'package:dbdummy/screens/ownerscreen.dart';
-import 'package:dbdummy/services/firebasestore.dart';
-import 'package:dbdummy/services/sqflitehelper_utils.dart';
+// import 'package:dbdummy/services/firebasestore.dart';
+// import 'package:dbdummy/services/sqflitehelper_utils.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:image_picker/image_picker.dart';
+// import 'package:image_picker/image_picker.dart';
 
 
 
 
 
 //DbPet _dbPet = DbPet();
-onPressOwner(context) {
-  if (kformKey.currentState.validate()) {
+// onPressOwner(context) {
+//   if (kformKey.currentState.validate()) {
     
-    try {
-      // uploadFiles();
-      insertingDtaFirebase();
-      // print('sign up name is $signupname');
-    } catch (e) {
-      print(e.message);
-    }
-    // print('${dogg.name}');
-    Navigator.pushNamed(context, Routes().homeScreen);
-  }
-}
+//     try {
+//       // uploadFiles();
+//       insertingDtaFirebase();
+//       // print('sign up name is $signupname');
+//     } catch (e) {
+//       print(e.message);
+//     }
+//     // print('${dogg.name}');
+//     Navigator.pushNamed(context, Routes().homeScreen);
+//   }
+// }
 
 // onPressOwner2(context) {
 //   print('inside owner on press');

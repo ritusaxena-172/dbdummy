@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dbdummy/model/signup_model.dart';
+// import 'package:dbdummy/model/signup_model.dart';
 import 'package:dbdummy/routes/routes.dart';
 import 'package:dbdummy/screens/signupsignin/widget/alert.dart';
 import 'package:dbdummy/utils/string_services.dart';

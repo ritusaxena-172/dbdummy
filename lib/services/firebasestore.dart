@@ -4,7 +4,7 @@ import 'package:dbdummy/model/sqflite_model.dart';
 import 'package:dbdummy/screens/signupsignin/widget/signup.dart';
 import 'package:dbdummy/services/sqflitehelper_utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+// import 'package:firebase_storage/firebase_storage.dart';
 OwnerScreenModel ownerScreenModel = OwnerScreenModel();
 String petData;
 final userCollection = Firestore.instance.collection('users');
@@ -68,28 +68,7 @@ firebasedatatosqflite() async {
 }
 
 
-void insertingDtaFirebase() async {
-  // upload
-  print('Inside insertingDtaFirebase');
-  print('uid is still $uid');
-  Map<String, String> petInformation = <String, String>{
-    "uid": uid,
-    "petName": ownerScreenModel.petName,
-    "petAge": petAge.text,
-    "petBreed": petBreed.text,
-    "petGender": petGender.text,
-    "petDescription": petDescription.text,
-    "ImageUrl": imageUrl,
-  };
-  petCollection.document(uid).setData(petInformation).then((_){
-     print('data set ${petName.text}');
-      petName.clear();
-                            petAge.clear();
-                            petBreed.clear();
-                            petGender.clear();
-                            petDescription.clear();
-  });
-}
+
 
 // insertFirebaseToSqflite(){
 //   Map<String, String> firebasetosqflitepetInformation = <String, String>{

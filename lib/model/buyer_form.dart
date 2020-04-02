@@ -12,6 +12,7 @@ class BuyerForm{
    String _numberofPets;
   String _numberofPetsRes;
   String _occupation;
+  String _familyMembers;
 // bool _validateUserWork = false;//donee
 String _userAge;//donee
 String _workingHours;//donee
@@ -22,6 +23,13 @@ bool _checkBox1=false;
 bool _checkBox2=false;
 
 //getters n setters
+
+set familyMembers(String familyMembers) {
+    this._familyMembers = familyMembers;
+  }
+  String get familyMembers => _familyMembers;
+
+
 
 set enableField(bool enableField) {
     this._enableField = enableField;

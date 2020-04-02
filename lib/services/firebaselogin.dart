@@ -18,7 +18,7 @@ Future userLogin(context, SignInModel signInModel) async {
         email: signInModel.signinemail, password: signInModel.signinpassword)).user;
     print(user.email);
     print('here again');
-    // getUID();
+    getUID();
     await Navigator.pushReplacementNamed(context, Routes().homeScreen);
   } catch (error) {      
     print(error);
