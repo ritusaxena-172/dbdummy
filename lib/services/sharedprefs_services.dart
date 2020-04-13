@@ -24,7 +24,7 @@ Future<String> getPreference() async {
 }
 void savePetUID(petDisplayModel){
   String petUID= petDisplayModel.petUID;
-  print(petUID);
+  // print(petUID);
   savePreferenceUID(petUID);
 }
 savePreferenceUID(String petUID ) async {

@@ -6,6 +6,6 @@ class FavModel{
   {
     this._details= details;
   }
-  get details=>_details;
+   get details=>_details;
 }
 

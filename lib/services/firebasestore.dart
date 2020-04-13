@@ -1,16 +1,19 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dbdummy/model/ownerscreen_model.dart';
+import 'package:dbdummy/model/sigin_model.dart';
 import 'package:dbdummy/model/sqflite_model.dart';
 import 'package:dbdummy/screens/signupsignin/widget/signup.dart';
 import 'package:dbdummy/services/sqflitehelper_utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:firebase_storage/firebase_storage.dart';
 OwnerScreenModel ownerScreenModel = OwnerScreenModel();
+SignInModel signInModel1;
 String petData;
 final userCollection = Firestore.instance.collection('users');
 final petCollection = Firestore.instance.collection('PetDetails');
 final acceptorCollection=Firestore.instance.collection('AcceptorDetails');
 final databaseReference = Firestore.instance;
+final donorFav = Firestore.instance.collection('donorFav');
 // final definedCollection=Firestore.instance.collection.
 // final databaseReference=Firestore.instance;
 FirebaseAuth auth = FirebaseAuth.instance;

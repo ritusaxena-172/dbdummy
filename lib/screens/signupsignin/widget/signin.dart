@@ -1,16 +1,12 @@
 import 'package:dbdummy/model/sigin_model.dart';
-import 'package:dbdummy/model/signup_model.dart';
 import 'package:dbdummy/provider/signin.dart';
 import 'package:dbdummy/provider/validators.dart';
-import 'package:dbdummy/routes/routes.dart';
-import 'package:dbdummy/screens/signupsignin/tabcontroller.dart';
-import 'package:dbdummy/screens/signupsignin/widget/alert.dart';
 import 'package:dbdummy/screens/signupsignin/widget/background.dart';
 import 'package:dbdummy/screens/signupsignin/widget/dialogbox.dart';
-import 'package:dbdummy/services/firebaselogin.dart';
 import 'package:dbdummy/services/siginwithgoogle.dart';
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:dbdummy/utils/decorations.dart';
+// import 'package:dbdummy/utils/images.dart';
 import 'package:dbdummy/utils/string_services.dart';
 import 'package:flutter/material.dart';
 
@@ -57,15 +53,6 @@ class _SigninState extends State<Signin> {
                         signInModel.signinemail = value;
                       });
                     },
-                    // decoration: outlineTextFiled
-                    //copyWith(
-                    //   labelText: 'Username?',
-                    //   prefixIcon: Icon(
-                    //     Icons.person,
-                    //     color: Color(0xffffffff),
-                    //   ),
-                    // ),
-
                     decoration: InputDecoration(
                       enabledBorder: outlineTextFiled,
                       prefixIcon: Icon(
@@ -81,6 +68,7 @@ class _SigninState extends State<Signin> {
                     height: 50,
                   ),
                   TextFormField(
+                    autocorrect: false,
                     autovalidate: signInModel.autovalidatepassword,
                     onEditingComplete: () {
                       setState(() {

@@ -44,6 +44,10 @@
         "source": "/Users/sahusoft/.gradle/caches/transforms-2/files-2.1/6eb14f512292913515d869914807ad40/play-services-base-17.1.0/res/drawable-hdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
+        "merged": "/Users/sahusoft/Downloads/dbdummy-master/build/app/intermediates/res/merged/debug/layout_toast_custom.xml.flat",
+        "source": "/Users/sahusoft/Downloads/dbdummy-master/build/fluttertoast/intermediates/packaged_res/debug/layout/toast_custom.xml"
+    },
+    {
         "merged": "/Users/sahusoft/Downloads/dbdummy-master/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
         "source": "/Users/sahusoft/.gradle/caches/transforms-2/files-2.1/6eb14f512292913515d869914807ad40/play-services-base-17.1.0/res/drawable-hdpi-v4/common_google_signin_btn_text_light_normal_background.9.png"
     },
@@ -162,6 +166,10 @@
     {
         "merged": "/Users/sahusoft/Downloads/dbdummy-master/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "/Users/sahusoft/.gradle/caches/transforms-2/files-2.1/3aaf6e5219b7f981ec263df919098c6f/core-1.1.0/res/drawable-xhdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/Users/sahusoft/Downloads/dbdummy-master/build/app/intermediates/res/merged/debug/drawable_toast_bg.xml.flat",
+        "source": "/Users/sahusoft/Downloads/dbdummy-master/build/fluttertoast/intermediates/packaged_res/debug/drawable/toast_bg.xml"
     },
     {
         "merged": "/Users/sahusoft/Downloads/dbdummy-master/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",

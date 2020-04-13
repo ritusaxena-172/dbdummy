@@ -1,10 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/model/ownerscreen_model.dart';
 import 'package:dbdummy/model/sqflite_model.dart';
 import 'package:dbdummy/provider/owner.dart';
 import 'package:dbdummy/routes/routes.dart';
+import 'package:dbdummy/screens/donorFavScreen.dart';
 import 'package:dbdummy/screens/signupsignin/widget/signup.dart';
 import 'package:dbdummy/services/firebasestore.dart';
+import 'package:dbdummy/services/formfilledCheck.dart';
 import 'package:dbdummy/services/sqflitehelper_utils.dart';
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:dbdummy/utils/decorations.dart';
@@ -16,6 +19,8 @@ import 'package:path/path.dart';
 
 Pet pet;
 DbPet _dbPet;
+DocumentSnapshot _documentSnapshot;
+
 final kformKey = GlobalKey<FormState>();
 OwnerScreenModel ownerScreenModel = OwnerScreenModel();
 
@@ -23,12 +28,8 @@ class OwnerScreen extends StatefulWidget {
   @override
   _OwnerScreenState createState() => _OwnerScreenState();
 }
-
 class _OwnerScreenState extends State<OwnerScreen> {
-
-
-
-void insertingDtaFirebase() async {
+void insertingDtaFirebase(BuildContext context) async {
   // upload
   print('Inside insertingDtaFirebase');
   print('uid is still $uid');
@@ -41,6 +42,7 @@ void insertingDtaFirebase() async {
     "petDescription": petDescription.text,
     "ImageUrl": imageUrl,
   };
+  
   petCollection.document(uid).setData(petInformation).then((_){
      print('data set ${petName.text}');
                             petName.clear();
@@ -48,11 +50,10 @@ void insertingDtaFirebase() async {
                             petBreed.clear();
                             petGender.clear();
                             petDescription.clear();
+       Navigator.pushReplacementNamed(context, Routes().ownerScreen);                      
   });
 }
-
-
-Future uploadFile() async {    
+Future uploadFile(BuildContext context) async {    
     print('inside upload function');
     StorageReference reference = FirebaseStorage.instance.ref().child("user_input/${petName.text}");
     StorageUploadTask uploadTask = reference.putFile(imageFile);  
@@ -65,7 +66,7 @@ Future uploadFile() async {
       print('url after downloading is $imageUrl');
     });
     try {
-      getUID().then((_){insertingDtaFirebase();});
+      getUID().then((_){insertingDtaFirebase(context);});
          
          } catch (e) {
           print(e.message);
@@ -99,7 +100,37 @@ Future uploadFile() async {
             decoration: boxDecoration,
           ),
         ),
-        body: Container(
+        body: checkForm(context),
+       
+      
+        );
+ 
+  }
+   checkForm( BuildContext context)
+   {
+     getDetails('PetDetails').then((results){
+      //  setState(() {
+         _documentSnapshot=results;
+      //  });
+       
+     });
+     if(_documentSnapshot.exists)
+     {
+       print('already  exists');
+        // Navigator.pushReplacement(
+        //               context,
+        //               MaterialPageRoute(
+        //               builder: (context) =>
+        //               DonorFav())
+        //              );
+
+      //  Navigator.pushReplacementNamed(context, Routes().ownerScreen);
+
+     }
+     else
+     {
+       print('doesnot  exists');
+      return  Container(
           child: Form(
               key: kformKey,
               child: ListView(children: <Widget>[
@@ -242,7 +273,7 @@ Future uploadFile() async {
                   shape: buttonborder,
                   onPressed: () {
                     
-                    uploadFile();
+                    uploadFile(context);
                     // onPressOwner(context);
                     // _dbDog.deleteTable();
                     //Navigator.pushNamed(context, Routes().homeScreen);
@@ -252,6 +283,8 @@ Future uploadFile() async {
                 ),
                 // Image.asset(imagefiles.toString())
               ])),
-        ));
-  }
-}
+        );
+      
+     }
+   }
+   }

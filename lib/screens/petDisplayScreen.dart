@@ -18,13 +18,31 @@ class PetDisplay extends StatefulWidget {
   @override
   PetDisplayState createState() => PetDisplayState();
 }
+bool fav=false;
 BuyerModel buyerModel=BuyerModel();
+
 class PetDisplayState extends State<PetDisplay> {
   DocumentReference ref;
   int i;
  PetDisplayModel petDisplayModel= PetDisplayModel(); 
   List<Pet> petList;
   Pet pet;
+  addAdopter(petDisplayModel) async
+  {
+    
+  // upload
+  print('Inside addAdopter');
+  print('uid is still $uid');
+  Map<String, String> donorInformation = <String, String>{
+    "uid": uid,
+    
+  };
+  donorFav.document(petDisplayModel.petUID).setData(donorInformation).then((_){ //adding uid of adopter to that particular petuid colllection
+     print('data set $uid');
+                          
+  });
+}
+  
   // void initState() {
   //   firebasedatatosqflite();
   //   super.initState();
@@ -36,6 +54,7 @@ class PetDisplayState extends State<PetDisplay> {
   QuerySnapshot querySnapshot;
   checkConnectivity()async{
   connectivityResult = await (Connectivity().checkConnectivity());
+  return connectivityResult;
   }
   getPetInformation() async{
     return await Firestore.instance.collection('PetDetails').getDocuments(); 
@@ -46,17 +65,17 @@ class PetDisplayState extends State<PetDisplay> {
     petDisplayModel.height= MediaQuery.of(context).size.height;  
       return Scaffold(
       backgroundColor: Colors.white,
-      floatingActionButton: FloatingActionButton(onPressed: 
-    (){print('calling adopter fav');
-    Navigator.pushReplacement(
-                  context,
-                   MaterialPageRoute(
-                   builder: (context) =>
-                   AdopterFav()
-                   ),
-                  );
+    //   floatingActionButton: FloatingActionButton(onPressed: 
+    // (){print('calling adopter fav');
+    // Navigator.pushReplacement(
+    //               context,
+    //                MaterialPageRoute(
+    //                builder: (context) =>
+    //                AdopterFav()
+    //                ),
+    //               );
                
-               }),
+    //            }),
       appBar: AppBar(
         shape: RoundedRectangleBorder(
             // borderRadius:BorderRadius.circular(80),
@@ -72,38 +91,45 @@ class PetDisplayState extends State<PetDisplay> {
           ),
       ),
     
-    // bottomNavigationBar: BottomNavigationBar(
-    //    currentIndex: 0, // this will be set when a new tab is tapped
-    //    items: [
-    //      BottomNavigationBarItem(
-    //        icon: new Icon(Icons.home),
-    //        title: new Text('Home'),
-    //      ),
-    //      BottomNavigationBarItem(
-    //        icon: new Icon(Icons.mail),
-    //        title: new Text('Messages'),
-    //      ),
-    //      BottomNavigationBarItem(
-    //        icon: IconButton(
-    //          icon: Icon(Icons.favorite, color: Colors.red),
-    //          onPressed: (){
-               
-    //          },),
-    //        title: Text('favourites'),
-    //      )
-    //    ]
-    // ),
+    bottomNavigationBar: BottomNavigationBar(
+      //  currentIndex: 0, // this will be set when a new tab is tapped
+       items: [
+         BottomNavigationBarItem(
+           icon: new Icon(Icons.home),
+           title: new Text('Home'),
+         ),
+         BottomNavigationBarItem(
+           icon: new Icon(Icons.mail),
+           title: new Text('Messages'),
+         ),
+         BottomNavigationBarItem(
+           icon: IconButton(
+             icon: Icon(Icons.favorite, color: Colors.red),
+             onPressed: (){
+               Navigator.pushReplacement(
+                  context,
+                   MaterialPageRoute(
+                   builder: (context) =>
+                   AdopterFav()
+                   ),
+                  );
+             },),
+           title: Text('favourites'),
+         )
+       ]
+    ),
 
 
 
 
       body: 
-      firebaseData(),
+      showPetInformation(),
     );
   }
-  Widget showPetInformation()  
+   showPetInformation()  
 { 
-  checkConnectivity();
+  checkConnectivity().then((connectivityResult){
+
     if (connectivityResult == ConnectivityResult.mobile || connectivityResult== ConnectivityResult.wifi) {
       print("Connected");
       return firebaseData();
@@ -113,6 +139,9 @@ class PetDisplayState extends State<PetDisplay> {
       return Center(child: CircularProgressIndicator());
       // sqfliteData();
     }
+
+  });
+    
   }
   Widget firebaseData(){
      getPetInformation().then((results){
@@ -198,6 +227,7 @@ class PetDisplayState extends State<PetDisplay> {
                            color: Colors.white)),
                          ),
                          onTap:(){
+                           print(uid);
                 print('imisde onTap');
                 imagEURL=querySnapshot.documents[index].data['ImageUrl'];
                 buyerModel.imageURL=querySnapshot.documents[index].data['ImageUrl'];
@@ -222,27 +252,35 @@ class PetDisplayState extends State<PetDisplay> {
                    ),
                  ),
                 Positioned(
+                  key: ValueKey(index),
                   right:0,
                   top:0,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child:
-                //       Icon(
-                //         favourites[index]? Icons.favorite: Icons.favorite_border, color: Colors.red
-                //       )
-                      // buyerModel.favourite?Icons.favorite: Icons.favorite_border, color: Colors.red
-                    // )
-                     GestureDetector(
-                         child: Text('Add to favourites', style: TextStyle(
-                        color: Colors.white,fontWeight: FontWeight.bold,
+                      IconButton(
                         
-                        )),
-                    onTap: (){
-                      
-                        petDisplayModel.petUID=querySnapshot.documents[index].data['uid']; 
+
+                        icon: Icon(
+                          buyerModel.favourite? Icons.favorite: Icons.favorite_border, color: Colors.red
+                        ),
+                     onPressed: (){
+                      setState(() {
+                        
+                        buyerModel.favourite=!buyerModel.favourite;
+                      });
+                      if(buyerModel.favourite==true)
+                      {
+                         print('uid is$uid');
+                         addAdopter(petDisplayModel);//passing that uid to func
+                        print('adding fav data to firebase');   
+                        petDisplayModel.petUID=querySnapshot.documents[index].data['uid']; //uid of that particular dog
                         savePetUID(petDisplayModel);
-                        print('adding fav data to firebase');
+                        
+                      }
+                        
                     },
+                   
                      ),
                   ),
                 ),

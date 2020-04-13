@@ -2,6 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:dbdummy/model/signup_model.dart';
 import 'package:dbdummy/routes/routes.dart';
 import 'package:dbdummy/screens/signupsignin/widget/alert.dart';
+import 'package:dbdummy/screens/signupsignin/widget/signup.dart';
+import 'package:dbdummy/screens/signupsignin/widget/signup.dart';
+import 'package:dbdummy/services/firebasestore.dart';
 import 'package:dbdummy/utils/string_services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -46,5 +49,17 @@ userSignup(context, signUpModel) {
         errorMessage = defaultError;
         showAlertDialog(context, errorMessage);
     }
+  });
+}
+updateData(accountScreenModel) {
+  print('hi');
+  Firestore.instance.collection('users').document(signInModel1.uid).updateData({
+    "name": accountScreenModel.editName.text,
+    "phone number": accountScreenModel.editPhone.text
+  }).then((result) {
+    print(accountScreenModel.editName.text);
+    print("new USer true");
+  }).catchError((onError) {
+    print("onError");
   });
 }

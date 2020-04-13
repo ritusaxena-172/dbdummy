@@ -37,7 +37,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
             decoration: boxDecoration,
           ),
         ),
-        drawer: Drawer(
+      drawer: Drawer(
             child: ListView(
           children: <Widget>[
             UserAccountsDrawerHeader(
@@ -54,12 +54,21 @@ class _HomeScreen2State extends State<HomeScreen2> {
             ),
             Card(
                 child: ListTile(
-                    title: Text('About us'),
+                    leading: Icon(Icons.chat, color: firstcolor),
+                    title: Text('Chat with Contacts'),
                     onTap: () {
-                      Navigator.pushNamed(context, Routes().aboutUsScreen);
+                      Navigator.pushNamed(context, Routes().chatWith);
                     })),
             Card(
                 child: ListTile(
+                    leading: Icon(Icons.account_circle, color: firstcolor),
+                    title: Text('My Account'),
+                    onTap: () {
+                      Navigator.pushNamed(context, Routes().accountScreen);
+                    })),
+            Card(
+                child: ListTile(
+                    leading: Icon(Icons.power_settings_new, color: firstcolor),
                     title: Text('Log Out'),
                     onTap: () {
                       Navigator.pushNamed(context, Routes().splashScreen);
@@ -118,7 +127,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
           GestureDetector(
             onTap: () {
               getUID();
-              Navigator.pushNamed(context, Routes().petDisplay);
+              Navigator.pushNamed(context, Routes().acceptorScreen);
             },
             child: Stack(
               children: <Widget>[

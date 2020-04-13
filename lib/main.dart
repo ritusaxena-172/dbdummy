@@ -1,13 +1,16 @@
 import 'package:dbdummy/model/buyer_model.dart';
 import 'package:dbdummy/routes/routes.dart';
 import 'package:dbdummy/screens/aboutus.dart';
+import 'package:dbdummy/screens/accountScreen.dart';
 import 'package:dbdummy/screens/adopter.dart';
 import 'package:dbdummy/screens/buyser2.dart';
-import 'package:dbdummy/screens/buyserscreen.dart';
-import 'package:dbdummy/screens/checkConnectivity.dart';
+import 'package:dbdummy/screens/chatScreen.dart';
+import 'package:dbdummy/screens/chatwithContacts.dart';
+// import 'package:dbdummy/screens/buyserscreen.dart';
+// import 'package:dbdummy/screens/checkConnectivity.dart';
 import 'package:dbdummy/screens/confirmadoption.dart';
 import 'package:dbdummy/screens/finalBuyerScreen.dart';
-import 'package:dbdummy/screens/homescreen.dart';
+// import 'package:dbdummy/screens/homescreen.dart';
 import 'package:dbdummy/screens/homescreen2.dart';
 
 import 'package:dbdummy/screens/ownerscreen.dart';
@@ -33,6 +36,7 @@ class Myapp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return MaterialApp(
+     
       initialRoute: route.splashScreen,
       routes: {
         route.splashScreen: (context) => SplashScreen(),
@@ -45,6 +49,10 @@ class Myapp extends StatelessWidget {
         route.acceptorScreen: (context)=>AcceptorScreen(),
         route.finalBuyer: (context) =>BuyerScreennn(),
         route.petDisplay: (context)=> PetDisplay(),
+        
+          route.accountScreen: (context) => AccountScreen(),
+          route.chatScreen: (context) => ChatScreen(),
+          route.chatWith: (context) => ChatWithContact(),
         
       },
     );

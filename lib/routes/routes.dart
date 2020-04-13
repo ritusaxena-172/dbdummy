@@ -12,4 +12,7 @@ class Routes {
   String acceptorScreen='/acceptorScreen';
   String finalBuyer='/finalBuyer';
 String petDisplay='/petDisplay';
+String accountScreen = '/accountScreen';
+  String chatScreen = '/chatScreen';
+  String chatWith='/chat With';
 }

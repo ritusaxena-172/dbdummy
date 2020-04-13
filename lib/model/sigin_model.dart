@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class SignInModel {
   String _signinemail;
+  String _uid;
 
   String _signinpassword;
 
@@ -27,6 +28,11 @@ class SignInModel {
 
 //getters and setters
 
+String get uid => _uid;
+
+  set uid(String uid) {
+    this._uid = uid;
+  }
   String get signinemail => _signinemail;
 
   set signinemail(String signinemail) {
@@ -38,6 +44,7 @@ class SignInModel {
   set signinpassword(String signinpassword) {
     this._signinpassword = signinpassword;
   }
+
 
   String get signinnewPassword => _signinnewPassword;
 

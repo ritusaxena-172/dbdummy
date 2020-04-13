@@ -17,10 +17,12 @@ MERGED from [:firebase_auth_web] /Users/sahusoft/Downloads/dbdummy-master/build/
 MERGED from [:connectivity] /Users/sahusoft/Downloads/dbdummy-master/build/connectivity/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-10:12
 MERGED from [:connectivity_macos] /Users/sahusoft/Downloads/dbdummy-master/build/connectivity_macos/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:shared_preferences] /Users/sahusoft/Downloads/dbdummy-master/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:firebase_messaging] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-20:12
 MERGED from [:flutter_share] /Users/sahusoft/Downloads/dbdummy-master/build/flutter_share/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:shared_preferences_macos] /Users/sahusoft/Downloads/dbdummy-master/build/shared_preferences_macos/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:shared_preferences_web] /Users/sahusoft/Downloads/dbdummy-master/build/shared_preferences_web/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:google_sign_in_web] /Users/sahusoft/Downloads/dbdummy-master/build/google_sign_in_web/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:fluttertoast] /Users/sahusoft/Downloads/dbdummy-master/build/fluttertoast/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:sqflite] /Users/sahusoft/Downloads/dbdummy-master/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:path_provider] /Users/sahusoft/Downloads/dbdummy-master/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.multidex:multidex:2.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/1e43ec82407637f465c620e746b223b7/multidex-2.0.0/AndroidManifest.xml:17:1-22:12
@@ -31,6 +33,7 @@ MERGED from [com.google.android.gms:play-services-measurement-api:17.2.2] /Users
 MERGED from [com.google.android.gms:play-services-measurement-sdk:17.2.2] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/7043a9d5f4a737f3f819087d2037f972/play-services-measurement-sdk-17.2.2/AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/f87fb67da7040e833a85e161ec172f5d/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.firebase:firebase-storage:17.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/2b0a360804ac442eabf7021cd3c148af/jetified-firebase-storage-17.0.0/AndroidManifest.xml:15:1-37:12
+MERGED from [com.google.firebase:firebase-messaging:20.0.1] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/368f4123a1e150ee98d361e2c0150ebe/jetified-firebase-messaging-20.0.1/AndroidManifest.xml:17:1-37:12
 MERGED from [com.google.firebase:firebase-iid:20.0.2] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:17:1-47:12
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/516d475c610d5ee0701cc5d0e0043980/firebase-auth-interop-19.0.0/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-common:19.3.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/031dfa708e0bf79e3497dfcb581ebbc8/jetified-firebase-common-19.3.0/AndroidManifest.xml:15:1-39:12
@@ -62,11 +65,11 @@ MERGED from [androidx.core:core:1.1.0] /Users/sahusoft/.gradle/caches/transforms
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/74d81cbab4baf82cd5ba855cad11f23d/lifecycle-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/82b463c8584fb88ea5a1f562d740c4b7/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/a78ce9b49fd39a3eac90624d04d1ee8a/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/c8f4c2580dddd9ecf64fc10bf9fbc418/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/3bf5fc05ca184d01c3bed36c84f7c6c7/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/b652641e60f40536fdf44e18539d0968/lifecycle-viewmodel-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/4227c25f5adddf6ac1aa1a65c6b6f6a4/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
 MERGED from [com.google.firebase:firebase-components:16.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/b73882900018acba0cd6f6be995611f1/jetified-firebase-components-16.0.0/AndroidManifest.xml:15:1-23:12
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/c8f4c2580dddd9ecf64fc10bf9fbc418/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/b59192acc39c8e1083525bb1a0764fd3/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/07713a4b02ecb1ede5529340586b2906/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/ec735b528ee8f52f56a38a2f27a69a4b/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -103,6 +106,8 @@ MERGED from [:firebase_storage] /Users/sahusoft/Downloads/dbdummy-master/build/f
 MERGED from [:firebase_storage] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_messaging] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-18:19
+MERGED from [:firebase_messaging] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-18:19
 MERGED from [com.google.firebase:firebase-analytics:17.2.2] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/2a70ee504bd32b1bd949b6dd58d86852/firebase-analytics-17.2.2/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-analytics:17.2.2] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/2a70ee504bd32b1bd949b6dd58d86852/firebase-analytics-17.2.2/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:23:5-40:19
@@ -117,6 +122,8 @@ MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/sahusoft/.gra
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/f87fb67da7040e833a85e161ec172f5d/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:16:5-24:19
 MERGED from [com.google.firebase:firebase-storage:17.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/2b0a360804ac442eabf7021cd3c148af/jetified-firebase-storage-17.0.0/AndroidManifest.xml:29:5-35:19
 MERGED from [com.google.firebase:firebase-storage:17.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/2b0a360804ac442eabf7021cd3c148af/jetified-firebase-storage-17.0.0/AndroidManifest.xml:29:5-35:19
+MERGED from [com.google.firebase:firebase-messaging:20.0.1] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/368f4123a1e150ee98d361e2c0150ebe/jetified-firebase-messaging-20.0.1/AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.firebase:firebase-messaging:20.0.1] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/368f4123a1e150ee98d361e2c0150ebe/jetified-firebase-messaging-20.0.1/AndroidManifest.xml:22:5-35:19
 MERGED from [com.google.firebase:firebase-iid:20.0.2] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:28:5-45:19
 MERGED from [com.google.firebase:firebase-iid:20.0.2] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:28:5-45:19
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/516d475c610d5ee0701cc5d0e0043980/firebase-auth-interop-19.0.0/AndroidManifest.xml:7:5-8:19
@@ -213,6 +220,8 @@ MERGED from [:connectivity_macos] /Users/sahusoft/Downloads/dbdummy-master/build
 MERGED from [:connectivity_macos] /Users/sahusoft/Downloads/dbdummy-master/build/connectivity_macos/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences] /Users/sahusoft/Downloads/dbdummy-master/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences] /Users/sahusoft/Downloads/dbdummy-master/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_messaging] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_messaging] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:flutter_share] /Users/sahusoft/Downloads/dbdummy-master/build/flutter_share/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:flutter_share] /Users/sahusoft/Downloads/dbdummy-master/build/flutter_share/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_macos] /Users/sahusoft/Downloads/dbdummy-master/build/shared_preferences_macos/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
@@ -221,6 +230,8 @@ MERGED from [:shared_preferences_web] /Users/sahusoft/Downloads/dbdummy-master/b
 MERGED from [:shared_preferences_web] /Users/sahusoft/Downloads/dbdummy-master/build/shared_preferences_web/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:google_sign_in_web] /Users/sahusoft/Downloads/dbdummy-master/build/google_sign_in_web/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:google_sign_in_web] /Users/sahusoft/Downloads/dbdummy-master/build/google_sign_in_web/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:fluttertoast] /Users/sahusoft/Downloads/dbdummy-master/build/fluttertoast/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:fluttertoast] /Users/sahusoft/Downloads/dbdummy-master/build/fluttertoast/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:sqflite] /Users/sahusoft/Downloads/dbdummy-master/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:sqflite] /Users/sahusoft/Downloads/dbdummy-master/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] /Users/sahusoft/Downloads/dbdummy-master/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
@@ -241,6 +252,8 @@ MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/sahusoft/.gra
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/f87fb67da7040e833a85e161ec172f5d/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-storage:17.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/2b0a360804ac442eabf7021cd3c148af/jetified-firebase-storage-17.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-storage:17.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/2b0a360804ac442eabf7021cd3c148af/jetified-firebase-storage-17.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-messaging:20.0.1] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/368f4123a1e150ee98d361e2c0150ebe/jetified-firebase-messaging-20.0.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:20.0.1] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/368f4123a1e150ee98d361e2c0150ebe/jetified-firebase-messaging-20.0.1/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-iid:20.0.2] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-iid:20.0.2] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/516d475c610d5ee0701cc5d0e0043980/firebase-auth-interop-19.0.0/AndroidManifest.xml:5:5-44
@@ -303,6 +316,8 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/sahusoft/.gradl
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/82b463c8584fb88ea5a1f562d740c4b7/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/a78ce9b49fd39a3eac90624d04d1ee8a/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/a78ce9b49fd39a3eac90624d04d1ee8a/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/c8f4c2580dddd9ecf64fc10bf9fbc418/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/c8f4c2580dddd9ecf64fc10bf9fbc418/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/3bf5fc05ca184d01c3bed36c84f7c6c7/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/3bf5fc05ca184d01c3bed36c84f7c6c7/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/b652641e60f40536fdf44e18539d0968/lifecycle-viewmodel-2.0.0/AndroidManifest.xml:20:5-44
@@ -311,8 +326,6 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/sahu
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/4227c25f5adddf6ac1aa1a65c6b6f6a4/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-components:16.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/b73882900018acba0cd6f6be995611f1/jetified-firebase-components-16.0.0/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-components:16.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/b73882900018acba0cd6f6be995611f1/jetified-firebase-components-16.0.0/AndroidManifest.xml:19:5-21:41
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/c8f4c2580dddd9ecf64fc10bf9fbc418/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/c8f4c2580dddd9ecf64fc10bf9fbc418/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/b59192acc39c8e1083525bb1a0764fd3/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/b59192acc39c8e1083525bb1a0764fd3/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/07713a4b02ecb1ede5529340586b2906/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
@@ -387,6 +400,8 @@ MERGED from [:firebase_storage] /Users/sahusoft/Downloads/dbdummy-master/build/f
 MERGED from [:firebase_storage] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_core] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_core] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_messaging] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-17:19
+MERGED from [:firebase_messaging] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-17:19
 MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:33:9-39:19
 MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:33:9-39:19
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.2] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/ca912bff2260618b5b638fe661521702/play-services-measurement-api-17.2.2/AndroidManifest.xml:27:9-33:19
@@ -455,6 +470,22 @@ uses-permission#android.permission.ACCESS_WIFI_STATE
 ADDED from [:connectivity] /Users/sahusoft/Downloads/dbdummy-master/build/connectivity/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-76
 	android:name
 		ADDED from [:connectivity] /Users/sahusoft/Downloads/dbdummy-master/build/connectivity/intermediates/library_manifest/debug/AndroidManifest.xml:8:22-73
+service#io.flutter.plugins.firebasemessaging.FlutterFirebaseMessagingService
+ADDED from [:firebase_messaging] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
+	android:name
+		ADDED from [:firebase_messaging] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-101
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from [:firebase_messaging] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:29
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from [:firebase_messaging] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-78
+	android:name
+		ADDED from [:firebase_messaging] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:25-75
+meta-data#com.google.firebase.components:io.flutter.plugins.firebasemessaging.FlutterFirebaseAppRegistrar
+ADDED from [:firebase_messaging] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-16:85
+	android:value
+		ADDED from [:firebase_messaging] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:16:17-82
+	android:name
+		ADDED from [:firebase_messaging] /Users/sahusoft/Downloads/dbdummy-master/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-127
 activity#com.google.firebase.auth.internal.FederatedSignInActivity
 ADDED from [com.google.firebase:firebase-auth:19.2.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/a83bb62cb43b672cf00b874e0ee6110c/firebase-auth-19.2.0/AndroidManifest.xml:24:9-31:50
 	android:excludeFromRecents
@@ -557,6 +588,12 @@ ADDED from [com.google.firebase:firebase-storage:17.0.0] /Users/sahusoft/.gradle
 		ADDED from [com.google.firebase:firebase-storage:17.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/2b0a360804ac442eabf7021cd3c148af/jetified-firebase-storage-17.0.0/AndroidManifest.xml:33:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-storage:17.0.0] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/2b0a360804ac442eabf7021cd3c148af/jetified-firebase-storage-17.0.0/AndroidManifest.xml:32:17-107
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:20.0.1] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/368f4123a1e150ee98d361e2c0150ebe/jetified-firebase-messaging-20.0.1/AndroidManifest.xml:28:9-34:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:20.0.1] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/368f4123a1e150ee98d361e2c0150ebe/jetified-firebase-messaging-20.0.1/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:20.0.1] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/368f4123a1e150ee98d361e2c0150ebe/jetified-firebase-messaging-20.0.1/AndroidManifest.xml:29:13-82
 uses-permission#com.google.android.c2dm.permission.RECEIVE
 ADDED from [com.google.firebase:firebase-iid:20.0.2] /Users/sahusoft/.gradle/caches/transforms-2/files-2.1/f26cdfb5f8d69cbc9663543f3ec1de65/firebase-iid-20.0.2/AndroidManifest.xml:26:5-82
 	android:name

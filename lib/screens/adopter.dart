@@ -1,9 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/model/buyer_form.dart';
+import 'package:dbdummy/routes/routes.dart';
 import 'package:dbdummy/screens/buyser2.dart';
 import 'package:dbdummy/screens/petDisplayScreen.dart';
 import 'package:dbdummy/screens/signupsignin/widget/signup.dart';
 import 'package:dbdummy/services/firebasestore.dart';
+import 'package:dbdummy/services/formfilledCheck.dart';
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:dbdummy/utils/string_services.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +19,11 @@ class AcceptorScreen extends StatefulWidget {
 BuyerForm buyerForm =BuyerForm();
 class _AcceptorScreenState extends State<AcceptorScreen> {
   final kFormKey = GlobalKey<FormState>();
+  QuerySnapshot querySnapshot;
+  DocumentSnapshot tempo;
   @override
   void initState() {
+    
     super.initState();
     buyerForm.wfh = '';
     buyerForm.wfhResult = '';
@@ -76,8 +82,37 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
             decoration: boxDecoration,
           ),
         ),
-        body: 
-         Form(
+        body: checkFormAlreadyFilled(),
+
+//         
+         
+    );
+  }
+   checkFormAlreadyFilled()
+  {
+    getDetails('AcceptorDetails').then((results){
+      setState(() {
+
+
+        tempo= results;
+        // print(tempo.data['userAge']);
+      });
+    });
+    if(tempo.exists)
+    {    print('exists');
+         print(tempo.data['userAge']);
+        //  Navigator.push(
+        //           context,
+        //            MaterialPageRoute(
+        //            builder: (context) =>
+        //            PetDisplay()
+        //            ),
+        //           );
+      }
+      else 
+    {
+      print('doesnot exists ');
+     return Form(
               key: kFormKey,
                    child: ListView(
                             children: <Widget>
@@ -364,14 +399,11 @@ Container(
           )
                           ]
                         ),
-                                      ),
-                
-                //   );
-                // },
-                 
-                // ),
-            
-         
-    );
+                                      );
+ 
+    }
+   
+   
   }
+   
 }

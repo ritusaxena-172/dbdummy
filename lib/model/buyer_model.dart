@@ -62,7 +62,7 @@ class BuyerModel {
   {
     this._favourite=favourite;
   }
-  get favourite=> _favourite;
+ bool get favourite=> _favourite;
 
 
 

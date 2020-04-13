@@ -399,6 +399,7 @@ public final class R {
     public static final int notification_template_icon_low_bg=0x7f04001f;
     public static final int notification_tile_bg=0x7f040020;
     public static final int notify_panel_notification_icon_bg=0x7f040021;
+    public static final int toast_bg=0x7f040022;
   }
   public static final class id {
     public static final int accessibility_action_clickable_span=0x7f050000;
@@ -505,6 +506,7 @@ public final class R {
     public static final int notification_template_icon_group=0x7f070004;
     public static final int notification_template_part_chronometer=0x7f070005;
     public static final int notification_template_part_time=0x7f070006;
+    public static final int toast_custom=0x7f070007;
   }
   public static final class mipmap {
     public static final int ic_launcher=0x7f080000;
@@ -529,14 +531,15 @@ public final class R {
     public static final int common_signin_button_text=0x7f090010;
     public static final int common_signin_button_text_long=0x7f090011;
     public static final int default_web_client_id=0x7f090012;
-    public static final int firebase_database_url=0x7f090013;
-    public static final int gcm_defaultSenderId=0x7f090014;
-    public static final int google_api_key=0x7f090015;
-    public static final int google_app_id=0x7f090016;
-    public static final int google_crash_reporting_api_key=0x7f090017;
-    public static final int google_storage_bucket=0x7f090018;
-    public static final int project_id=0x7f090019;
-    public static final int status_bar_notification_info_overflow=0x7f09001a;
+    public static final int fcm_fallback_notification_channel_label=0x7f090013;
+    public static final int firebase_database_url=0x7f090014;
+    public static final int gcm_defaultSenderId=0x7f090015;
+    public static final int google_api_key=0x7f090016;
+    public static final int google_app_id=0x7f090017;
+    public static final int google_crash_reporting_api_key=0x7f090018;
+    public static final int google_storage_bucket=0x7f090019;
+    public static final int project_id=0x7f09001a;
+    public static final int status_bar_notification_info_overflow=0x7f09001b;
   }
   public static final class style {
     public static final int LaunchTheme=0x7f0a0000;
