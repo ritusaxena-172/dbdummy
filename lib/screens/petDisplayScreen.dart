@@ -9,6 +9,8 @@ import 'package:dbdummy/model/sqflite_model.dart';
 import 'package:dbdummy/screens/adopterFavpetsScreen.dart';
 import 'package:dbdummy/screens/confirmadoption.dart';
 import 'package:dbdummy/screens/signupsignin/widget/signup.dart';
+import 'package:dbdummy/services/connectivity.dart';
+import 'package:dbdummy/services/firebasePetRegistration.dart';
 import 'package:dbdummy/services/firebasestore.dart';
 import 'package:dbdummy/services/sharedprefs_services.dart';
 import 'package:dbdummy/utils/color_services.dart';
@@ -27,21 +29,7 @@ class PetDisplayState extends State<PetDisplay> {
  PetDisplayModel petDisplayModel= PetDisplayModel(); 
   List<Pet> petList;
   Pet pet;
-  addAdopter(petDisplayModel) async
-  {
-    
-  // upload
-  print('Inside addAdopter');
-  print('uid is still $uid');
-  Map<String, String> donorInformation = <String, String>{
-    "uid": uid,
-    
-  };
-  donorFav.document(petDisplayModel.petUID).setData(donorInformation).then((_){ //adding uid of adopter to that particular petuid colllection
-     print('data set $uid');
-                          
-  });
-}
+  
   
   // void initState() {
   //   firebasedatatosqflite();
@@ -50,12 +38,9 @@ class PetDisplayState extends State<PetDisplay> {
   // MediaQueryy mediaQuery= MediaQueryy();
   
   int length;
-  var connectivityResult;
+  
   QuerySnapshot querySnapshot;
-  checkConnectivity()async{
-  connectivityResult = await (Connectivity().checkConnectivity());
-  return connectivityResult;
-  }
+  
   getPetInformation() async{
     return await Firestore.instance.collection('PetDetails').getDocuments(); 
   }
@@ -91,39 +76,39 @@ class PetDisplayState extends State<PetDisplay> {
           ),
       ),
     
-    bottomNavigationBar: BottomNavigationBar(
-      //  currentIndex: 0, // this will be set when a new tab is tapped
-       items: [
-         BottomNavigationBarItem(
-           icon: new Icon(Icons.home),
-           title: new Text('Home'),
-         ),
-         BottomNavigationBarItem(
-           icon: new Icon(Icons.mail),
-           title: new Text('Messages'),
-         ),
-         BottomNavigationBarItem(
-           icon: IconButton(
-             icon: Icon(Icons.favorite, color: Colors.red),
-             onPressed: (){
-               Navigator.pushReplacement(
-                  context,
-                   MaterialPageRoute(
-                   builder: (context) =>
-                   AdopterFav()
-                   ),
-                  );
-             },),
-           title: Text('favourites'),
-         )
-       ]
-    ),
+    // bottomNavigationBar: BottomNavigationBar(
+    //   //  currentIndex: 0, // this will be set when a new tab is tapped
+    //    items: [
+    //      BottomNavigationBarItem(
+    //        icon: new Icon(Icons.home),
+    //        title: new Text('Home'),
+    //      ),
+    //      BottomNavigationBarItem(
+    //        icon: new Icon(Icons.mail),
+    //        title: new Text('Messages'),
+    //      ),
+    //      BottomNavigationBarItem(
+    //        icon: IconButton(
+    //          icon: Icon(Icons.favorite, color: Colors.red),
+    //          onPressed: (){
+    //            Navigator.pushReplacement(
+    //               context,
+    //                MaterialPageRoute(
+    //                builder: (context) =>
+    //                AdopterFav()
+    //                ),
+    //               );
+    //          },),
+    //        title: Text('favourites'),
+    //      )
+    //    ]
+    // ),
 
 
 
 
       body: 
-      showPetInformation(),
+      firebaseData(),
     );
   }
    showPetInformation()  
@@ -159,144 +144,136 @@ class PetDisplayState extends State<PetDisplay> {
     {
        print('length is ${querySnapshot.documents.length}');
       print('querySnapshot is not null');
-      
-      
-      // setState(() {
-      //   petDisplayModel.length=querySnapshot.documents.length;
-      // });
-      // for(i=0; i<petDisplayModel.length;i++)
-      // {
-      //   favourites[i]=false; 
-      // }
-      return Container(
-        child: GridView.builder(
-          padding: EdgeInsets.all(20),
-          scrollDirection: Axis.vertical,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            mainAxisSpacing: 20,
-            crossAxisCount: 1),
-         itemCount: querySnapshot.documents.length,
-         itemBuilder: ((BuildContext context,index){
-          print('index is $index');
-          // print('name is ${querySnapshot.documents[index].data['petName']}');
-          // print('age is ${querySnapshot.documents[index].data['petAge']}');
-          // print('age is ${querySnapshot.documents[index].data['petBreed']}');
-          // print('URL in buyer is ${buyerModel.imageURL}');
-          // return null;
-          try {
-            // print('inside try');
-            return Card(
-              elevation: 15.0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Container(
-                width: petDisplayModel.width*.8,
-                decoration: BoxDecoration(
-                  border:Border.all(
-                    width: 8,
-                    color: splashcolor,
-                    ),
-                    borderRadius: BorderRadius.circular(12),
-                   ),
-             child: Stack(
-             children: <Widget>[
-                Image.network(querySnapshot.documents[index].data['ImageUrl'], width: petDisplayModel.width, fit: BoxFit.fill),
-                Positioned(
-                  left:0.0,
-                  bottom:0.0,
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text('  ${querySnapshot.documents[index].data['petName']}',style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 28.0,
-                    color: Colors.white)),
-                  ),
-                ),
-                Positioned(
-                   right:0.0,
-                   bottom:0.0,
-                   child: Row(
-                     children: <Widget>[
-                       GestureDetector(
-                         child: Padding(
-                           padding: const EdgeInsets.all(10.0),
-                           child: Text('View Profile',style: TextStyle(
-                           fontWeight: FontWeight.bold,
-                           // fontSize: 28.0,
-                           color: Colors.white)),
-                         ),
-                         onTap:(){
-                           print(uid);
-                print('imisde onTap');
-                imagEURL=querySnapshot.documents[index].data['ImageUrl'];
-                buyerModel.imageURL=querySnapshot.documents[index].data['ImageUrl'];
-                buyerModel.petAge=querySnapshot.documents[index].data['petAge'];
-                buyerModel.petName =querySnapshot.documents[index].data['petName']; 
-                buyerModel.petGender=querySnapshot.documents[index].data['petGender'];
-                buyerModel.petBreed=querySnapshot.documents[index].data['petBreed']; 
-                buyerModel.petDescription=querySnapshot.documents[index].data['petDescription']; 
-                print(buyerModel.imageURL);
-                print(' name is ${buyerModel.petName}');
-                Navigator.pushReplacement(
-                  context,
-                   MaterialPageRoute(
-                   builder: (context) =>
-                   ConfirmAdoption(context, buyerModel)
-                   ),
-                  );
-              },
-                  ),
-                       Icon(Icons.arrow_right, color: Colors.white),
-                     ],
-                   ),
-                 ),
-                Positioned(
-                  key: ValueKey(index),
-                  right:0,
-                  top:0,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child:
-                      IconButton(
-                        
-
-                        icon: Icon(
-                          buyerModel.favourite? Icons.favorite: Icons.favorite_border, color: Colors.red
-                        ),
-                     onPressed: (){
-                      setState(() {
-                        
-                        buyerModel.favourite=!buyerModel.favourite;
-                      });
-                      if(buyerModel.favourite==true)
-                      {
-                         print('uid is$uid');
-                         addAdopter(petDisplayModel);//passing that uid to func
-                        print('adding fav data to firebase');   
-                        petDisplayModel.petUID=querySnapshot.documents[index].data['uid']; //uid of that particular dog
-                        savePetUID(petDisplayModel);
-                        
-                      }
-                        
-                    },
-                   
-                     ),
-                  ),
-                ),
-             ]
-              ),
+     
+      return GridView.builder(
+        padding: EdgeInsets.all(20),
+        scrollDirection: Axis.vertical,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          mainAxisSpacing: 20,
+          crossAxisCount: 1),
+       itemCount: querySnapshot.documents.length,
+       itemBuilder: ((BuildContext context,index){
+        print('index is $index');
+        // print('name is ${querySnapshot.documents[index].data['petName']}');
+        // print('age is ${querySnapshot.documents[index].data['petAge']}');
+        // print('age is ${querySnapshot.documents[index].data['petBreed']}');
+        // print('URL in buyer is ${buyerModel.imageURL}');
+        // return null;
+        try {
+          // print('inside try');
+          return Card(
+            elevation: 15.0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
             ),
-            ); 
-          } 
-          catch (e) {
-            print(e);
-            return e;
-          }
-         }
-         ), 
-         ),
-      );   
+            child: Container(
+              width: petDisplayModel.width*.8,
+              decoration: BoxDecoration(
+                border:Border.all(
+                  width: 8,
+                  color: splashcolor,
+                  ),
+                  borderRadius: BorderRadius.circular(12),
+                 ),
+           child: Stack(
+           children: <Widget>[
+              Image.network(querySnapshot.documents[index].data['ImageUrl'], width: petDisplayModel.width, fit: BoxFit.fill),
+              Positioned(
+                left:0.0,
+                bottom:0.0,
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text('  ${querySnapshot.documents[index].data['petName']}',style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 28.0,
+                  color: Colors.white)),
+                ),
+              ),
+              Positioned(
+                 right:0.0,
+                 bottom:0.0,
+                 child: Row(
+                   children: <Widget>[
+                     GestureDetector(
+                       child: Padding(
+                         padding: const EdgeInsets.all(10.0),
+                         child: Text('View Profile',style: TextStyle(
+                         fontWeight: FontWeight.bold,
+                         // fontSize: 28.0,
+                         color: Colors.white)),
+                       ),
+                       onTap:(){
+                         print(uid);
+              print('imisde onTap');
+              imagEURL=querySnapshot.documents[index].data['ImageUrl'];
+              buyerModel.imageURL=querySnapshot.documents[index].data['ImageUrl'];
+              buyerModel.petAge=querySnapshot.documents[index].data['petAge'];
+              buyerModel.petName =querySnapshot.documents[index].data['petName']; 
+              buyerModel.petGender=querySnapshot.documents[index].data['petGender'];
+              buyerModel.petBreed=querySnapshot.documents[index].data['petBreed']; 
+              buyerModel.petDescription=querySnapshot.documents[index].data['petDescription']; 
+              buyerModel.petUID=querySnapshot.documents[index].data['uid']; 
+              print(buyerModel.imageURL);
+              print(' name is ${buyerModel.petName}');
+              Navigator.pushReplacement(
+                context,
+                 MaterialPageRoute(
+                 builder: (context) =>
+                 ConfirmAdoption(context, buyerModel)
+                 ),
+                );
+            },
+                ),
+                     Icon(Icons.arrow_right, color: Colors.white),
+                   ],
+                 ),
+               ),
+              // Positioned(
+              //   key: ValueKey(index),
+              //   right:0,
+              //   top:0,
+              //   child: Padding(
+              //     padding: const EdgeInsets.all(8.0),
+              //     child:
+              //       IconButton(
+                      
+
+              //         icon: Icon(
+              //           buyerModel.favourite? Icons.favorite: Icons.favorite_border, color: Colors.red
+              //         ),
+              //      onPressed: (){
+              //       setState(() {
+                      
+              //         buyerModel.favourite=!buyerModel.favourite;
+              //       });
+              //       if(buyerModel.favourite==true)
+              //       {
+              //          print('uid is$uid');
+              //          addAdopter(context,petDisplayModel);//passing that uid to func
+              //         print('adding fav data to firebase');   
+              //         petDisplayModel.petUID=querySnapshot.documents[index].data['uid']; //uid of that particular dog
+              //         savePetUID(petDisplayModel);
+                      
+              //       }
+                      
+              //     },
+                 
+              //      ),
+              //   ),
+              // ),
+          
+           ]
+            ),
+          ),
+          ); 
+        } 
+        catch (e) {
+          print(e);
+          return e;
+        }
+       }
+       ), 
+       );   
      
      }
     else{

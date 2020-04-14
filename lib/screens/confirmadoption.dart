@@ -4,7 +4,10 @@ import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/model/buyer_model.dart';
 import 'package:dbdummy/model/ownerscreen_model.dart';
 import 'package:dbdummy/model/petDisplayModel.dart';
+import 'package:dbdummy/screens/chatScreen.dart';
 import 'package:dbdummy/screens/petDisplayScreen.dart';
+import 'package:dbdummy/screens/signupsignin/widget/signup.dart';
+import 'package:dbdummy/services/formfilledCheck.dart';
 import 'package:dbdummy/utils/color_services.dart';
 // import 'package:dbdummy/components/appbar_components.dart';
 // import 'package:dbdummy/model/buyerScreen.dart';
@@ -29,6 +32,7 @@ class ConfirmAdoption extends StatefulWidget {
   @override
   _ConfirmAdoptionState createState() => _ConfirmAdoptionState();
 }
+DocumentSnapshot documentSnapshot;
 
 class _ConfirmAdoptionState extends State<ConfirmAdoption> {
 
@@ -50,16 +54,26 @@ Future share(String path) async {
     }
 
 
-// void initState() 
-// {
-//   print('inside initState');
-//   super.initState();
-//     var data =
-//         await Firestore.instance.collection('users').document(dogUserId).get();
-//     name = data.data['phone number'];
-//     getData();
-//     print(phone_number);
-// }
+void initState() 
+{
+  print('inside initState');
+  getDetailsOwner('users').then((result){
+    setState(() {
+      documentSnapshot=result;
+    });
+
+print('${documentSnapshot.data['name']}, ${documentSnapshot.data['uid']}');
+// print('$uid');
+
+  });
+  super.initState();
+   
+}
+ getDetailsOwner(collectionn) async {
+      print('current uid  is ${buyerModel.petUID}');
+      return await Firestore.instance.collection(collectionn).document(buyerModel.petUID).get();
+      
+    }
 
   QuerySnapshot queryySnapshot;
   var groupInfo;
@@ -228,12 +242,14 @@ Future share(String path) async {
                   RaisedButton(
                   padding: EdgeInsets.all(15),
                   onPressed: (){
-                    //  Navigator.pushReplacement(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //   builder: (context) =>
-                    //   ContactOwner())
-                    //  );
+                  
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ChatScreen(
+                                chatWithUid: documentSnapshot.data['uid'], chatWithName: documentSnapshot.data['name']),
+                          ));
+                    
                   },
                   color: secondcolor,
                   child: Text('Adopt Me!'), 

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/model/buyer_form.dart';
+import 'package:dbdummy/provider/adopterScreen.dart';
 import 'package:dbdummy/routes/routes.dart';
 import 'package:dbdummy/screens/buyser2.dart';
 import 'package:dbdummy/screens/petDisplayScreen.dart';
@@ -16,9 +17,10 @@ class AcceptorScreen extends StatefulWidget {
   @override
   _AcceptorScreenState createState() => _AcceptorScreenState();
 }
+final kFormKey = GlobalKey<FormState>();
 BuyerForm buyerForm =BuyerForm();
 class _AcceptorScreenState extends State<AcceptorScreen> {
-  final kFormKey = GlobalKey<FormState>();
+  
   QuerySnapshot querySnapshot;
   DocumentSnapshot tempo;
   @override
@@ -31,43 +33,8 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
     buyerForm.numberofPetsRes='';
     buyerForm.userAge='';
   }
-  saveForm() {
-    print('inside saveform');
-    if (kFormKey.currentState.validate()) {
-      kFormKey.currentState.save();
-      print('calling');
-      // setState(() {
-      //   buyerForm.wfhResult = buyerForm.wfh;
-      //   buyerForm.numberofPetsRes=buyerForm.numberofPets;
-      // });
-      insertDataFirebase();
-    }
-  }
-  void insertDataFirebase() async{
-  print('inserting data....');
-  Map<String, String> userInformation = <String, String>{
-      "userAge": buyerForm.userAge,
-      "userOccupation": buyerForm.occupation,
-      "userFamilyMembers":buyerForm.familyMembers,
-      "workType" : buyerForm.wfh,
-      "numberOfPets": buyerForm.numberofPets,
-      "petInformation": userPetDetails.text,
-      "UID": uid,
-    };
-    acceptorCollection.document(uid).setData(userInformation).then((_){
-      print('data set ${userAge.text}');
-        userAge.clear();
-        userWork.clear();
-        userWorkingHours.clear();
-        Navigator.pushReplacement(
-                context,
-                 MaterialPageRoute(
-                 builder: (context) =>
-                 PetDisplay(),
-                 ),
-                );
-    });
-}
+ 
+ 
   @override
   Widget build(BuildContext context) {
     return 
@@ -92,27 +59,18 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
   {
     getDetails('AcceptorDetails').then((results){
       setState(() {
-
-
         tempo= results;
-        // print(tempo.data['userAge']);
       });
     });
     if(tempo.exists)
     {    print('exists');
          print(tempo.data['userAge']);
-        //  Navigator.push(
-        //           context,
-        //            MaterialPageRoute(
-        //            builder: (context) =>
-        //            PetDisplay()
-        //            ),
-        //           );
+          //  Navigator.pushNamed(context, Routes().petDisplay);                      
       }
-      else 
+      else if(!tempo.exists)
     {
       print('doesnot exists ');
-     return Form(
+      return Form(
               key: kFormKey,
                    child: ListView(
                             children: <Widget>
@@ -391,7 +349,8 @@ Container(
             {
               getUID().then((_){
                       print(uid);
-                      saveForm();
+                      // saveForm();
+                      onPressedSave(context, buyerForm);
             });}
             else{
               print('you need to abide by the tnc');            }
@@ -401,6 +360,13 @@ Container(
                         ),
                                       );
  
+    
+    }
+    else
+    {
+      return Center(
+        child: CircularProgressIndicator(),
+      );
     }
    
    

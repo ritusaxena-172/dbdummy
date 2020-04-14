@@ -6,3 +6,4 @@ getDetails(collectionn) async {
       return await Firestore.instance.collection(collectionn).document(uid).get();
       
     }
+   

@@ -25,7 +25,6 @@ class DbPet {
 //insertion in sqflite
   Future<void> insertPet(Map<String, dynamic> data) async {
     await openDb();
-
     return await database.insert(
       'pet',
       data,

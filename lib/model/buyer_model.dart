@@ -15,6 +15,7 @@ class BuyerModel {
   
   String _imageURL;
   bool _favourite=false;
+  String _petUID;
   String _petName;
   
   String _petAge;
@@ -23,7 +24,11 @@ class BuyerModel {
   
   String _petGender;
   String _petDescription;
-  
+  set petUID(String petUID)
+  {
+    this._petUID=petUID;
+  }
+  String get petUID=>_petUID;
 
   set petName(String petName)
    {

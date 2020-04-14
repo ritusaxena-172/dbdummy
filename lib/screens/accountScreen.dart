@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/model/accountscreenmodel.dart';
-import 'package:dbdummy/model/sigin_model.dart';
+// import 'package:dbdummy/model/sigin_model.dart';
 import 'package:dbdummy/provider/accountscreen.dart';
 import 'package:dbdummy/provider/validators.dart';
 import 'package:dbdummy/services/firebasestore.dart';
@@ -21,6 +21,7 @@ class _AccountScreenState extends State<AccountScreen> {
   AccountScreenModel accountScreenModel = AccountScreenModel();
 
   getInformation() async {
+    print('here');
     final data = await Firestore.instance
         .collection('users')
         .document(signInModel1.uid)

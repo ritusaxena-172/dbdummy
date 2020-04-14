@@ -50,7 +50,7 @@ void insertingDtaFirebase(BuildContext context) async {
                             petBreed.clear();
                             petGender.clear();
                             petDescription.clear();
-       Navigator.pushReplacementNamed(context, Routes().ownerScreen);                      
+       Navigator.pushReplacementNamed(context, Routes().petDisplay);                      
   });
 }
 Future uploadFile(BuildContext context) async {    
@@ -124,7 +124,7 @@ Future uploadFile(BuildContext context) async {
         //               DonorFav())
         //              );
 
-      //  Navigator.pushReplacementNamed(context, Routes().ownerScreen);
+       Navigator.pushNamed(context, Routes().ownerScreen);
 
      }
      else
