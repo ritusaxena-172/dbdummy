@@ -1,8 +1,8 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
-import 'package:dbdummy/provider/checkFormFilled.dart';
-import 'package:dbdummy/provider/checkPetFormFilled.dart';
+// import 'package:dbdummy/provider/checkFormFilled.dart';
+// import 'package:dbdummy/provider/checkPetFormFilled.dart';
 import 'package:dbdummy/routes/routes.dart';
 // import 'package:dbdummy/screens/buyser2.dart';
 // import 'package:dbdummy/screens/buyserscreen.dart';
@@ -13,6 +13,8 @@ import 'package:dbdummy/services/sharedprefs_services.dart';
 import 'package:dbdummy/services/siginwithgoogle.dart';
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:dbdummy/utils/string_services.dart';
+import 'package:dbdummy/viewModel/checkFormFilled.dart';
+import 'package:dbdummy/viewModel/checkPetFormFilled.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -195,16 +197,16 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           
           
-            // Expanded(
-            //     flex: 2,
-            //     child: Container(
-            //         margin: EdgeInsets.only(top: 60),
-            //         child: Text('Adopt, don\'t shop!',
-            //             style: TextStyle(
-            //               fontSize: 40,
-            //               color: secondcolor,
-            //               fontStyle: FontStyle.italic,
-            //             )))),
+            Expanded(
+                flex: 2,
+                child: Container(
+                    margin: EdgeInsets.only(top: 60),
+                    child: Text('Adopt, don\'t shop!',
+                        style: TextStyle(
+                          fontSize: 40,
+                          color: secondcolor,
+                          fontStyle: FontStyle.italic,
+                        )))),
             // Row(
             //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             //   children: <Widget>[

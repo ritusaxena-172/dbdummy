@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/model/buyer_form.dart';
-import 'package:dbdummy/provider/adopterScreen.dart';
+// import 'package:dbdummy/provider/adopterScreen.dart';
+import 'package:dbdummy/screens/petDisplayScreen.dart';
 // import 'package:dbdummy/routes/routes.dart';
 // import 'package:dbdummy/screens/buyser2.dart';
 // import 'package:dbdummy/screens/petDisplayScreen.dart';
@@ -10,6 +11,7 @@ import 'package:dbdummy/services/firebasestore.dart';
 import 'package:dbdummy/services/formfilledCheck.dart';
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:dbdummy/utils/string_services.dart';
+import 'package:dbdummy/viewModel/adopterScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_formfield/dropdown_formfield.dart';
 // import 'package:dropdownfield/dropdownfield.dart';
@@ -332,17 +334,7 @@ Container(
           ),
          RaisedButton(
            child: Text('Submit'),
-          onPressed: (){ 
-            if(buyerForm.checkBox2==true)
-            {
-              getUID().then((_){
-                      print(uid);
-                      // saveForm();
-                      onPressedSave(context, buyerForm);
-            });}
-            else{
-              print('you need to abide by the tnc');            }
-          },
+          onPressed: onPressAdopter(context, buyerForm),
           )
                           ]
                         ),

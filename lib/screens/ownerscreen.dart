@@ -1,17 +1,13 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:dbdummy/components/appbar_decoration.dart';
+import 'package:dbdummy/database/uploadImage.dart';
 import 'package:dbdummy/model/ownerscreen_model.dart';
 import 'package:dbdummy/model/sqflite_model.dart';
 // import 'package:dbdummy/provider/owner.dart';
 import 'package:dbdummy/routes/routes.dart';
-// import 'package:dbdummy/screens/donorFavScreen.dart';
-import 'package:dbdummy/screens/signupsignin/widget/signup.dart';
-import 'package:dbdummy/services/firebasestore.dart';
-import 'package:dbdummy/services/formfilledCheck.dart';
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:dbdummy/utils/decorations.dart';
 import 'package:dbdummy/utils/string_services.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 // import 'package:path/path.dart';
@@ -29,65 +25,11 @@ class OwnerScreen extends StatefulWidget {
   _OwnerScreenState createState() => _OwnerScreenState();
 }
 class _OwnerScreenState extends State<OwnerScreen> {
-void insertingDtaFirebase(BuildContext context) async {
-  // upload
-  print('Inside insertingDtaFirebase');
-  print('uid is still $uid');
-  Map<String, String> petInformation = <String, String>{
-    "uid": uid,
-    "petName": petName.text,
-    "petAge": petAge.text,
-    "petBreed": petBreed.text,
-    "petGender": petGender.text,
-    "petDescription": petDescription.text,
-    "ImageUrl": imageUrl,
-  };
-  
-  petCollection.document(uid).setData(petInformation).then((_){
-     print('data set ${petName.text}');
-      // showDialog(
-      //      context: context,
-      //                       builder: (context) {
-      //                         return contentAlert(context);
-      //                       }
-      // );
-                            
-                            petName.clear();
-                            petAge.clear();
-                            petBreed.clear();
-                            petGender.clear();
-                            petDescription.clear();
-                            
-       Navigator.pushReplacementNamed(context, Routes().petDisplay);                      
-  });
-}
-Future uploadFile(BuildContext context) async {    
-    print('inside upload function');
-    StorageReference reference = FirebaseStorage.instance.ref().child("user_input/${petName.text}");
-    StorageUploadTask uploadTask = reference.putFile(imageFile);  
-    await uploadTask.onComplete;
-    print('File uploaded');
-    reference.getDownloadURL().then((fileURL){
-      print('inside download url');
-      setState(() {
-      imageUrl=fileURL;
-      print('url after downloading is $imageUrl');
-    });
-    try {
-      getUID().then((_){insertingDtaFirebase(context);});
-         } catch (e) {
-          print(e.message);
-         }
-  });
- } 
-
-
-
   openCamera(BuildContext context) async {
     image = await ImagePicker.pickImage(source: ImageSource.camera);
     if (image != null) {
       setState(() {
-        imageFile = image;
+        ownerScreenModel.imageFile = image;
         print('image is clicked');
       });
     } else {
@@ -258,7 +200,7 @@ Future uploadFile(BuildContext context) async {
              shape: buttonborder,
              onPressed: () {
                
-               uploadFile(context);
+               uploadFile(context, ownerScreenModel);
                // onPressOwner(context);
                // _dbDog.deleteTable();
                //Navigator.pushNamed(context, Routes().homeScreen);

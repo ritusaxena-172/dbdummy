@@ -1,6 +1,7 @@
 import 'package:dbdummy/model/sigin_model.dart';
-import 'package:dbdummy/provider/validators.dart';
+// import 'package:dbdummy/provider/validators.dart';
 import 'package:dbdummy/utils/color_services.dart';
+import 'package:dbdummy/viewModel/validators.dart';
 import 'package:flutter/material.dart';
 
 class LoginAlert extends StatefulWidget {

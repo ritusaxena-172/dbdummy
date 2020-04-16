@@ -5,9 +5,10 @@ import 'package:dbdummy/screens/signupsignin/widget/alert.dart';
 import 'package:dbdummy/screens/signupsignin/widget/signup.dart';
 import 'package:dbdummy/services/firebasestore.dart';
 import 'package:dbdummy/utils/string_services.dart';
+import 'package:dbdummy/viewModel/adopterScreen.dart';
 import 'package:flutter/material.dart';
 
-void insertDataFirebase(BuildContext context) async{
+void insertDataFirebase(BuildContext context, BuyerForm buyerForm) async{
   String errorMessage;
   print('inserting data....');
   Map<String, String> userInformation = <String, String>{
@@ -26,24 +27,7 @@ void insertDataFirebase(BuildContext context) async{
         userWorkingHours.clear();
         Navigator.pushReplacementNamed(context, Routes().petDisplay);                      
     })..catchError((error){  print('error is $error');
-    switch (error.code) {
-      case "ERROR_EMAIL_ALREADY_IN_USE":
-        errorMessage = emailInUse;
-        showAlertDialog(context, errorMessage);
-        break;
-      case "ERROR_INVALID_EMAIL":
-        errorMessage = invalidEmail;
-        showAlertDialog(context, errorMessage);
-        break;
-      case "ERROR_NETWORK_REQUEST_FAILED":
-        errorMessage = networkError;
-        showAlertDialog(context, errorMessage);
-        break;
-      default:
-        errorMessage = defaultError;
-        showAlertDialog(context, errorMessage);
-        
-        }
+      switchFunction(context,error);
     }
     );
 }

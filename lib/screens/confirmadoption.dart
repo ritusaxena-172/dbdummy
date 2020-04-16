@@ -35,14 +35,7 @@ class ConfirmAdoption extends StatefulWidget {
 DocumentSnapshot documentSnapshot;
 
 class _ConfirmAdoptionState extends State<ConfirmAdoption> {
-
-// void initState()
-// {
-//   super.initState();
-//   print(object);
-// }
-
-  PetDisplayModel petDisplayModel= PetDisplayModel();
+PetDisplayModel petDisplayModel= PetDisplayModel();
   // BuyerModel buyerModel= BuyerModel();
 Future share(String path) async {
       print('$path');
@@ -57,21 +50,21 @@ Future share(String path) async {
 void initState() 
 {
   print('inside initState');
-  getDetailsOwner('users').then((result){
+  getDetailsOwner().then((result){
     setState(() {
       documentSnapshot=result;
     });
 
-print('${documentSnapshot.data['name']}, ${documentSnapshot.data['uid']}');
+print('details are: ${documentSnapshot.data['name']}, ${documentSnapshot.data['uid']}');
 // print('$uid');
 
   });
   super.initState();
    
 }
- getDetailsOwner(collectionn) async {
+ getDetailsOwner() async {
       print('current uid  is ${buyerModel.petUID}');
-      return await Firestore.instance.collection(collectionn).document(buyerModel.petUID).get();
+      return await Firestore.instance.collection('users').document(buyerModel.petUID).get();
       
     }
 
@@ -234,7 +227,7 @@ print('${documentSnapshot.data['name']}, ${documentSnapshot.data['uid']}');
                   RaisedButton(
                   padding: EdgeInsets.all(15),
                   onPressed: (){
-                     share(image.path);
+                     share(imagEURL);
                   },
                   color: firstcolor,
                   child: Text('Share Me!'), 
@@ -242,7 +235,7 @@ print('${documentSnapshot.data['name']}, ${documentSnapshot.data['uid']}');
                   RaisedButton(
                   padding: EdgeInsets.all(15),
                   onPressed: (){
-                    getDetailsOwner('users').then((result){
+                    getDetailsOwner().then((result){
                   setState(() {
                     documentSnapshot=result;
                   });

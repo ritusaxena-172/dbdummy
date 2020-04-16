@@ -24,7 +24,7 @@ TextEditingController petBreed = TextEditingController();
 TextEditingController petDescription = TextEditingController();
 TextEditingController petGender = TextEditingController();
 File image, imageFile;
-String imageUrl;
+
 
 
 class OwnerScreenModel {
@@ -39,13 +39,24 @@ class OwnerScreenModel {
   bool _validateDescription = false;
 
   bool _validateGender=false;
- 
+ String _imageUrl;
 String _petAge;
 String _petBreed;
 String _petGender;
 String _petDescription;
 String _petName;
+File _imageFile;
+String get imageUrl => _imageUrl;
 
+  set imageUrl(String imageUrl) {
+    this._imageUrl = imageUrl;
+  }
+
+set imageFile( File imageFile )
+{
+  this._imageFile=imageFile;
+}
+File get imageFile=>_imageFile;
 
   //getters and setters
 

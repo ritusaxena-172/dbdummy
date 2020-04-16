@@ -1,13 +1,15 @@
 // import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dbdummy/model/signup_model.dart';
-import 'package:dbdummy/provider/signup.dart';
-import 'package:dbdummy/provider/validators.dart';
+// import 'package:dbdummy/provider/signup.dart';
+// import 'package:dbdummy/provider/validators.dart';
 // import 'package:dbdummy/routes/routes.dart';
 // import 'package:dbdummy/screens/signupsignin/tabcontroller.dart';
 import 'package:dbdummy/screens/signupsignin/widget/background.dart';
 // import 'package:dbdummy/services/firebasesignup_services.dart';
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:dbdummy/utils/decorations.dart';
+import 'package:dbdummy/viewModel/signup.dart';
+import 'package:dbdummy/viewModel/validators.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 

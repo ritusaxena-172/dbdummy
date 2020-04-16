@@ -1,6 +1,6 @@
 import 'package:dbdummy/model/sigin_model.dart';
-import 'package:dbdummy/provider/signin.dart';
-import 'package:dbdummy/provider/validators.dart';
+// import 'package:dbdummy/provider/signin.dart';
+// import 'package:dbdummy/provider/validators.dart';
 import 'package:dbdummy/screens/signupsignin/widget/background.dart';
 import 'package:dbdummy/screens/signupsignin/widget/dialogbox.dart';
 import 'package:dbdummy/services/siginwithgoogle.dart';
@@ -8,6 +8,8 @@ import 'package:dbdummy/utils/color_services.dart';
 import 'package:dbdummy/utils/decorations.dart';
 // import 'package:dbdummy/utils/images.dart';
 import 'package:dbdummy/utils/string_services.dart';
+import 'package:dbdummy/viewModel/signin.dart';
+import 'package:dbdummy/viewModel/validators.dart';
 import 'package:flutter/material.dart';
 
 final ksiginformKey = GlobalKey<FormState>();
