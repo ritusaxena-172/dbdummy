@@ -23,8 +23,7 @@ DbPet dbPet = DbPet();
 Future<String> getUID() async {
   print('inside uid');
   final FirebaseUser user = await FirebaseAuth.instance.currentUser();
-  print('here');
-  print('user is $user');
+  
   uid = user.uid.toString();
   if (uid != null) {
     print('uid is not null $uid');

@@ -2,11 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/model/chatwithModel.dart';
 // import 'package:dbdummy/model/chat%20withmodel.dart';
-import 'package:dbdummy/model/ownerscreen_model.dart';
-import 'package:dbdummy/model/sqflite_model.dart';
-import 'package:dbdummy/routes/routes.dart';
 import 'package:dbdummy/screens/chatscreen.dart';
-import 'package:dbdummy/services/sqflitehelper_utils.dart';
 import 'package:flutter/material.dart';
 
 class ChatWithContact extends StatefulWidget {
@@ -22,7 +18,6 @@ class ChatWithContactState extends State<ChatWithContact> {
   getUserInfo() async {
     return await Firestore.instance.collection('users').getDocuments();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,7 +68,7 @@ class ChatWithContactState extends State<ChatWithContact> {
                               ChatScreen(chatWithUid: uid, chatWithName: name),
                         ),
                       );
-                      ;
+                      
                     },
                     leading: Text('${_chatWithModel.name}'),
                     subtitle: Text('${_chatWithModel.phoneNumber}')),

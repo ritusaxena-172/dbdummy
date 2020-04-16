@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/routes/routes.dart';
@@ -9,12 +8,10 @@ import 'package:dbdummy/services/sharedprefs_services.dart';
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:dbdummy/utils/string_services.dart';
 import 'package:flutter/material.dart';
-
 class HomeScreen2 extends StatefulWidget {
   @override
   _HomeScreen2State createState() => _HomeScreen2State();
 }
-
 class _HomeScreen2State extends State<HomeScreen2> {
   String ksharedemail = '';
   @override
@@ -22,7 +19,6 @@ class _HomeScreen2State extends State<HomeScreen2> {
     getPreference().then(updateName);
     super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,7 +78,6 @@ class _HomeScreen2State extends State<HomeScreen2> {
               //  margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
               // child: Material(
               //     elevation: 9.0,
-
               // shape: RoundedRectangleBorder(
               //     borderRadius: BorderRadius.only(
               //   bottomLeft: Radius.circular(7),
@@ -116,7 +111,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
             width: 390,
             child: Center(
                 child: Text(
-              '🐾 Choose your service.🐾',
+              ':feet: Choose your service.:feet:',
               style: TextStyle(
                 color: Colors.orange,
                 fontSize: 20,
@@ -169,6 +164,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
               ],
             ),
           ),
+          
           GestureDetector(
             onTap: () {
               Navigator.pushNamed(context, Routes().ownerScreen);
@@ -211,6 +207,9 @@ class _HomeScreen2State extends State<HomeScreen2> {
               ],
             ),
           ),
+          
+          
+          
           GestureDetector(
             child: Stack(
               children: <Widget>[
@@ -252,10 +251,20 @@ class _HomeScreen2State extends State<HomeScreen2> {
           ),
         ]));
   }
-
   void updateName(String email) {
     setState(() {
       this.ksharedemail = email;
     });
   }
 }
+
+
+
+
+
+
+
+
+
+
+

@@ -2,12 +2,9 @@
 // import 'package:dbdummy/model/ownerscreen_model.dart';
 // import 'package:dbdummy/model/signup_model.dart';
 // import 'package:dbdummy/model/sqflite_model.dart';
-import 'package:dbdummy/routes/routes.dart';
 // import 'package:dbdummy/screens/buyserscreen.dart';
-import 'package:dbdummy/screens/ownerscreen.dart';
 // import 'package:dbdummy/services/firebasestore.dart';
 // import 'package:dbdummy/services/sqflitehelper_utils.dart';
-import 'package:flutter/cupertino.dart';
 // import 'package:image_picker/image_picker.dart';
 // onPressedSavePet(BuildContext context, BuyerForm buyerForm)
 // {

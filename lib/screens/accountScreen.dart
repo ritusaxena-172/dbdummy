@@ -3,10 +3,8 @@ import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/model/accountscreenmodel.dart';
 // import 'package:dbdummy/model/sigin_model.dart';
 import 'package:dbdummy/provider/accountscreen.dart';
-import 'package:dbdummy/provider/validators.dart';
 import 'package:dbdummy/services/firebasestore.dart';
 import 'package:dbdummy/utils/color_services.dart';
-import 'package:dbdummy/utils/decorations.dart';
 import 'package:flutter/material.dart';
 
 final kaccountKey = GlobalKey<FormState>();

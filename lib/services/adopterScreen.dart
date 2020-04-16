@@ -43,7 +43,7 @@ void insertDataFirebase(BuildContext context) async{
         errorMessage = defaultError;
         showAlertDialog(context, errorMessage);
         
-        };
+        }
     }
     );
 }

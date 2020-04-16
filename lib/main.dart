@@ -10,8 +10,10 @@ import 'package:dbdummy/screens/chatwithContacts.dart';
 // import 'package:dbdummy/screens/checkConnectivity.dart';
 import 'package:dbdummy/screens/confirmadoption.dart';
 import 'package:dbdummy/screens/finalBuyerScreen.dart';
+import 'package:dbdummy/screens/homescreen.dart';
+// import 'package:dbdummy/screens/homescreen2.dart';
 // import 'package:dbdummy/screens/homescreen.dart';
-import 'package:dbdummy/screens/homescreen2.dart';
+// import 'package:dbdummy/screens/homescreen2.dart';
 
 import 'package:dbdummy/screens/ownerscreen.dart';
 import 'package:dbdummy/screens/petDisplayScreen.dart';
@@ -40,7 +42,7 @@ class Myapp extends StatelessWidget {
       initialRoute: route.splashScreen,
       routes: {
         route.splashScreen: (context) => SplashScreen(),
-        route.homeScreen: (context) => HomeScreen2(),
+        route.homeScreen: (context) => HomeScreen(),
         route.ownerScreen: (context) => OwnerScreen(),
         route.buyerScreen: (context) => BuyerScreenn(),
         route.confirmationScreen: (context) => ConfirmAdoption(context, buyerModel),

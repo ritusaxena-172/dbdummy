@@ -1,4 +1,3 @@
-import 'package:dbdummy/model/signup_model.dart';
 import 'package:dbdummy/utils/string_services.dart';
 
 String store;

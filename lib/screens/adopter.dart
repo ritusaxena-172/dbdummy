@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/model/buyer_form.dart';
 import 'package:dbdummy/provider/adopterScreen.dart';
-import 'package:dbdummy/routes/routes.dart';
-import 'package:dbdummy/screens/buyser2.dart';
-import 'package:dbdummy/screens/petDisplayScreen.dart';
+// import 'package:dbdummy/routes/routes.dart';
+// import 'package:dbdummy/screens/buyser2.dart';
+// import 'package:dbdummy/screens/petDisplayScreen.dart';
 import 'package:dbdummy/screens/signupsignin/widget/signup.dart';
 import 'package:dbdummy/services/firebasestore.dart';
 import 'package:dbdummy/services/formfilledCheck.dart';
@@ -20,12 +20,12 @@ class AcceptorScreen extends StatefulWidget {
 final kFormKey = GlobalKey<FormState>();
 BuyerForm buyerForm =BuyerForm();
 class _AcceptorScreenState extends State<AcceptorScreen> {
-  
-  QuerySnapshot querySnapshot;
+ 
+ QuerySnapshot querySnapshot;
   DocumentSnapshot tempo;
   @override
   void initState() {
-    
+   
     super.initState();
     buyerForm.wfh = '';
     buyerForm.wfhResult = '';
@@ -49,28 +49,16 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
             decoration: boxDecoration,
           ),
         ),
-        body: checkFormAlreadyFilled(),
+        body: formFunction(),
 
 //         
          
     );
   }
-   checkFormAlreadyFilled()
+  
+  Widget formFunction()
   {
-    getDetails('AcceptorDetails').then((results){
-      setState(() {
-        tempo= results;
-      });
-    });
-    if(tempo.exists)
-    {    print('exists');
-         print(tempo.data['userAge']);
-          //  Navigator.pushNamed(context, Routes().petDisplay);                      
-      }
-      else if(!tempo.exists)
-    {
-      print('doesnot exists ');
-      return Form(
+   return  Form(
               key: kFormKey,
                    child: ListView(
                             children: <Widget>
@@ -359,17 +347,7 @@ Container(
                           ]
                         ),
                                       );
- 
     
-    }
-    else
-    {
-      return Center(
-        child: CircularProgressIndicator(),
-      );
-    }
-   
-   
   }
    
 }

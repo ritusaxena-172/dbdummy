@@ -6,8 +6,8 @@ import 'package:dbdummy/model/ownerscreen_model.dart';
 import 'package:dbdummy/model/petDisplayModel.dart';
 import 'package:dbdummy/screens/chatScreen.dart';
 import 'package:dbdummy/screens/petDisplayScreen.dart';
-import 'package:dbdummy/screens/signupsignin/widget/signup.dart';
-import 'package:dbdummy/services/formfilledCheck.dart';
+// import 'package:dbdummy/screens/signupsignin/widget/signup.dart';
+// import 'package:dbdummy/services/formfilledCheck.dart';
 import 'package:dbdummy/utils/color_services.dart';
 // import 'package:dbdummy/components/appbar_components.dart';
 // import 'package:dbdummy/model/buyerScreen.dart';
@@ -242,6 +242,11 @@ print('${documentSnapshot.data['name']}, ${documentSnapshot.data['uid']}');
                   RaisedButton(
                   padding: EdgeInsets.all(15),
                   onPressed: (){
+                    getDetailsOwner('users').then((result){
+                  setState(() {
+                    documentSnapshot=result;
+                  });
+                    });
                   
                       Navigator.push(
                           context,
