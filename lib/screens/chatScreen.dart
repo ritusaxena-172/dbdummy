@@ -1,6 +1,5 @@
-// import 'dart:ffi';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dbdummy/components/appBar_style.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/model/chatModel.dart';
 
@@ -44,7 +43,6 @@ class _ChatScreenState extends State<ChatScreen> {
   Future<void> callback() async {
     print(chatModel.messageController.text);
     if (chatModel.messageController.text.length > 0) {
-      // chatModel.messageController.clear();
       var documentReference = Firestore.instance
           .collection('messages')
           .document(chatModel.chatId)
@@ -80,7 +78,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Chat with ${widget.chatWithName}'),
+          title: Text('Chat with ${widget.chatWithName}', style: style,),
           flexibleSpace: Container(
             decoration: boxDecoration,
           ),

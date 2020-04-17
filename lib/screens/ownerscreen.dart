@@ -1,21 +1,16 @@
 
+import 'package:dbdummy/components/appBar_style.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/database/uploadImage.dart';
 import 'package:dbdummy/model/ownerscreen_model.dart';
 import 'package:dbdummy/model/sqflite_model.dart';
-// import 'package:dbdummy/provider/owner.dart';
 import 'package:dbdummy/routes/routes.dart';
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:dbdummy/utils/decorations.dart';
 import 'package:dbdummy/utils/string_services.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-// import 'package:path/path.dart';
-
 Pet pet;
-// DbPet _dbPet;
-// DocumentSnapshot _documentSnapshot;
-
 
 final kformKey = GlobalKey<FormState>();
 OwnerScreenModel ownerScreenModel = OwnerScreenModel();
@@ -43,7 +38,7 @@ class _OwnerScreenState extends State<OwnerScreen> {
           centerTitle: true,
           title: Text(
             'Pet Registration form',
-            style: TextStyle(color: light, fontWeight: FontWeight.bold),
+            style: style
           ),
           flexibleSpace: Container(
             decoration: boxDecoration,
@@ -67,7 +62,6 @@ class _OwnerScreenState extends State<OwnerScreen> {
            iconSize: 50,
            onPressed: () {
              openCamera(context);
-             // Image.file(imagefiles);
            },
            icon: Icon(Icons.camera_alt),
              ),
@@ -195,81 +189,23 @@ class _OwnerScreenState extends State<OwnerScreen> {
                },
              ),
            ),
-           RaisedButton(
+           
+           Builder(builder: (context)=> RaisedButton(
              color: firstcolor,
              shape: buttonborder,
              onPressed: () {
-               
+               Scaffold.of(context).showSnackBar(
+                 SnackBar(content: Center(child: CircularProgressIndicator()),)
+               );
                uploadFile(context, ownerScreenModel);
-               // onPressOwner(context);
-               // _dbDog.deleteTable();
-               //Navigator.pushNamed(context, Routes().homeScreen);
-               // onPressOwner2(context);
-             },
+               },
              child: Text('Submit'),
            ),
-           // Image.asset(imagefiles.toString())
+         )
+          
+         
          ]));
       
-   }
-  //  contentAlert(BuildContext context)
-  //  {
-  //   Builder(builder: (BuildContext context){
-
-  //  return AlertDialog(
-  //                             title: Text('Thank You'),
-  //                             content: Text(alertContent),
-  //                             shape: RoundedRectangleBorder(
-  //                             borderRadius: BorderRadius.circular(20),
-
-  //                             ),
-  //                             actions: <Widget>[
-  //                               RaisedButton(
-  //                                 child: Text('Ok'),
-  //                                 onPressed: (){ Navigator.pushReplacementNamed(context, Routes().homeScreen);}),
-  //                               RaisedButton(
-  //                                 child: Text('Display Pets'),
-  //                                 onPressed: (){
-  //                                   Navigator.pushReplacementNamed(context, Routes().petDisplay);   
-  //                                 })
-  //                             ],
-  //                           );
-     
-  //    }
-  //     );
-  //       }
-        contentAlert(BuildContext context) {
- 
-  // set up the AlertDialog
-  AlertDialog alert = AlertDialog(
-     title: Text('Thank You'),
-                              content: Text(alertContent),
-                              shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-
-                              ),
-                              actions: <Widget>[
-                                RaisedButton(
-                                  child: Text('Ok'),
-                                  onPressed: (){ Navigator.pushReplacementNamed(context, Routes().homeScreen);}),
-                                RaisedButton(
-                                  child: Text('Display Pets'),
-                                  onPressed: (){
-                                    Navigator.pushReplacementNamed(context, Routes().petDisplay);   
-                                  })
-                              ],
-                            );
-  
-
-  // show the dialog
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return alert;
-                          },
-                        );
-}
-
-     
+   } 
    }
    

@@ -1,42 +1,26 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dbdummy/components/appBar_style.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
-// import 'package:dbdummy/main.dart';
 import 'package:dbdummy/model/buyer_model.dart';
-import 'package:dbdummy/model/ownerscreen_model.dart';
+import 'package:dbdummy/model/general_model.dart';
 import 'package:dbdummy/model/petDisplayModel.dart';
 import 'package:dbdummy/screens/chatScreen.dart';
-import 'package:dbdummy/screens/petDisplayScreen.dart';
-// import 'package:dbdummy/screens/signupsignin/widget/signup.dart';
-// import 'package:dbdummy/services/formfilledCheck.dart';
+import 'package:dbdummy/screens/homescreen.dart';
+import 'package:dbdummy/screens/petDisplay/petDisplayScreen.dart';
+import 'package:dbdummy/services/share.dart';
 import 'package:dbdummy/utils/color_services.dart';
-// import 'package:dbdummy/components/appbar_components.dart';
-// import 'package:dbdummy/model/buyerScreen.dart';
-// import 'package:dbdummy/model/firebasemodel.dart';
-// import 'package:dbdummy/model/ownerscreen.dart';
-// import 'package:dbdummy/model/signuomodel.dart';
-// import 'package:dbdummy/screens/contactDetails.dart';
-// import 'package:dbdummy/model/signuomodel.dart';
-// import 'package:dbdummy/components/appbar_decoration.dart';
-// import 'package:dbdummy/utils/color_service.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:flutter_share/flutter_share.dart';
-// import 'package:dbdummy/utils/color_services.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_share/flutter_share.dart';
-
 class ConfirmAdoption extends StatefulWidget {
-  ConfirmAdoption(BuildContext context, BuyerModel buyerModel);
+  ConfirmAdoption(BuildContext context, BuyerModel buyerModel, MediaQueryy mediaQuery);
 
   @override
   _ConfirmAdoptionState createState() => _ConfirmAdoptionState();
 }
 DocumentSnapshot documentSnapshot;
-
-class _ConfirmAdoptionState extends State<ConfirmAdoption> {
 PetDisplayModel petDisplayModel= PetDisplayModel();
-  // BuyerModel buyerModel= BuyerModel();
+class _ConfirmAdoptionState extends State<ConfirmAdoption> {
 Future share(String path) async {
       print('$path');
       await FlutterShare.shareFile(
@@ -54,92 +38,42 @@ void initState()
     setState(() {
       documentSnapshot=result;
     });
-
-print('details are: ${documentSnapshot.data['name']}, ${documentSnapshot.data['uid']}');
-// print('$uid');
-
   });
   super.initState();
-   
 }
  getDetailsOwner() async {
       print('current uid  is ${buyerModel.petUID}');
       return await Firestore.instance.collection('users').document(buyerModel.petUID).get();
-      
     }
 
   QuerySnapshot queryySnapshot;
   var groupInfo;
-// getOwnerInformation() async{
-//   return await Firestore.instance.collection('users').document('dogUserId').get(); 
-//   }
-// getData() async {
-//   Firestore.instance
-//         .collection('users')
-//         .document('dogUserId')
-//         .get()
-//         .then((DocumentSnapshot ds) {
-//       // use ds as a snapshot
-//       return ListTile(
-//         title: new Text(ds['name']),
-//         subtitle: new Text(ds['phone number']),
-//       );
-//      });
-//   }
-  
-  // Widget getOwnerInformation()
-  // {
-  //   print('inside getFunction');
-  //  ownerInformation().then((results){
-  //    setState(() {
-  //      queryySnapshot=results;
-  //    });
-  //  });
-  //  if(queryySnapshot!=null)
-  //  {
-  //    return ;
-  //  }
-  // }
-  // Widget getData()
-  // {
-    
-  // }
-  // createAlertDialogueBox(BuildContext context) async
-  // {
-  //   print('inside alert box');
-  //   return showDialog(context: context,builder: (context)
-  //   {
-  //      return Dialog(
-  //      child: getDetails(),
-       
-  //        );
-  //   }
-  //   );
-  // }
+
   @override
   Widget build(BuildContext context) {
-    petDisplayModel.width= MediaQuery.of(context).size.width;
-    petDisplayModel.height= MediaQuery.of(context).size.height;
+    mediaQuery.width= MediaQuery.of(context).size.width;
+    mediaQuery.height= MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'Confirm Adoption ',
-          style: TextStyle(color: light, fontWeight: FontWeight.bold),
+          style: style
         ),
         flexibleSpace: Container(
           decoration: boxDecoration,
         ),
       ),
+      
       body: Card(
         child:Column(
           children: <Widget>[
             Container(
             padding: EdgeInsets.all(15),
-            width: petDisplayModel.width,
-            height: petDisplayModel.height*.4,
+            width: mediaQuery.width,
+            height: mediaQuery.height*.4,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: Image.network(imagEURL,width: petDisplayModel.width, fit: BoxFit.fill)
+              child: Image.network(imagEURL,width: mediaQuery.width, fit: BoxFit.fill)
               ),
             ),
             Container(
@@ -147,7 +81,6 @@ print('details are: ${documentSnapshot.data['name']}, ${documentSnapshot.data['u
             borderRadius: BorderRadius.only(topLeft: Radius.circular(40) , topRight:Radius.circular(40) )
             ),
             child: Column(
-              // crossAxisAlignment: CrossAxisAlignment,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Container(
@@ -166,10 +99,7 @@ print('details are: ${documentSnapshot.data['name']}, ${documentSnapshot.data['u
                      child: Text('AGE \n ${buyerModel.petAge}',style: TextStyle(
                     fontWeight: FontWeight.bold,)),
                     ),
-                  // VerticalDivider(
-                  //   color: Colors.black,
-                  //   thickness: 5.0,
-                  // ),
+                 
                   Container(
                   width: 2,
                   height: 35,
@@ -202,8 +132,8 @@ print('details are: ${documentSnapshot.data['name']}, ${documentSnapshot.data['u
                        ))
                      ),
                      Container(
-                        height: petDisplayModel.height*.1,
-                        width: petDisplayModel.width,
+                        height: mediaQuery.height*.1,
+                        width: mediaQuery.width,
                         child: Center(
                           child: Text(' ${buyerModel.petDescription}',style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -226,9 +156,12 @@ print('details are: ${documentSnapshot.data['name']}, ${documentSnapshot.data['u
                 children: <Widget>[
                   RaisedButton(
                   padding: EdgeInsets.all(15),
-                  onPressed: (){
-                     share(imagEURL);
+                  onPressed: ()
+                  {
+                    final api= ShareAPI();
+                    api.onPressed(imagEURL);
                   },
+                 
                   color: firstcolor,
                   child: Text('Share Me!'), 
                   ),

@@ -1,18 +1,18 @@
-// import 'dart:js';
-
+import 'package:dbdummy/model/general_model.dart';
 import 'package:dbdummy/routes/routes.dart';
 import 'package:flutter/material.dart';
 
- checkPetFormFilled(documentSnapshot, context)
+ checkPetFormFilled(documentSnapshot, context, MediaQueryy mediaQuery)
 {
   if(documentSnapshot.exists)
                         {
-                          print('exist');
-                          Navigator.pushNamed(context, Routes().petDisplay);      
+                          
+                        
+                          Navigator.pushNamed(context, Routes().alreadyFilled);  
                         }
                         else if(!documentSnapshot.exists)
                         {
-                          print('not exist');
+                         
                           Navigator.pushNamed(context, Routes().ownerScreen);  
                         }
                         else

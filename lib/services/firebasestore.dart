@@ -20,19 +20,6 @@ FirebaseAuth auth = FirebaseAuth.instance;
 DbPet dbPet = DbPet();
 
 //get current user id
-Future<String> getUID() async {
-  print('inside uid');
-  final FirebaseUser user = await FirebaseAuth.instance.currentUser();
-  
-  uid = user.uid.toString();
-  if (uid != null) {
-    print('uid is not null $uid');
-    return uid;
-  } else {
-    print('uid is null!');
-    return null;
-  }
-}
 
 //retrieve data from firebase
 firebasedatatosqflite() async {

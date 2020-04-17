@@ -32,5 +32,7 @@ final String googleLogo = "assets/images/google_logo.png";
 final String agreement="If you do not have a vet, please include three personal references above.";
 final String agreement1="I agree that if I am permitted to adopt, I will have the adoptive dog checked by my own veterinarian within 7 days of said adoption, and will provide medical care, at my own expense, for any conditions previously unknown to PawSome, as well as routine  yearly exams for as long as I own the dog.";
 final String agreement2="I understand and agree that giving false information in response to any of the questions above will disqualify me from adopting a pet from PawSome, and will nullify all adoption(s) and/or adoption agreements between the applicant and PawSome.";
+final String acknowledgement="Your form is filled successfully .\n Now, You can sit back and relax as we find perfect home for your loved one.";
+final String ackno= "Interested adopters will contact you soon. Incase, you want to explore other pets go to HomeScreen and Click on, 'For Adoption'.";
 //  Alert Box
 final String alertContent="Interested users will contact you. Incase, you want to explore other pets press display pets.";

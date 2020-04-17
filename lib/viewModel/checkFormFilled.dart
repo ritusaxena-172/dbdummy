@@ -1,5 +1,3 @@
-// import 'dart:js';
-
 import 'package:dbdummy/routes/routes.dart';
 import 'package:flutter/material.dart';
 

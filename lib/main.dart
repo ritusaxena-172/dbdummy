@@ -3,26 +3,15 @@ import 'package:dbdummy/routes/routes.dart';
 import 'package:dbdummy/screens/aboutus.dart';
 import 'package:dbdummy/screens/accountScreen.dart';
 import 'package:dbdummy/screens/adopter.dart';
-import 'package:dbdummy/screens/buyser2.dart';
+import 'package:dbdummy/screens/alreadyfilled.dart';
 import 'package:dbdummy/screens/chatScreen.dart';
 import 'package:dbdummy/screens/chatwithContacts.dart';
-// import 'package:dbdummy/screens/buyserscreen.dart';
-// import 'package:dbdummy/screens/checkConnectivity.dart';
 import 'package:dbdummy/screens/confirmadoption.dart';
-import 'package:dbdummy/screens/finalBuyerScreen.dart';
 import 'package:dbdummy/screens/homescreen.dart';
-// import 'package:dbdummy/screens/homescreen2.dart';
-// import 'package:dbdummy/screens/homescreen.dart';
-// import 'package:dbdummy/screens/homescreen2.dart';
-
 import 'package:dbdummy/screens/ownerscreen.dart';
-import 'package:dbdummy/screens/petDisplayScreen.dart';
-
-//import 'package:dbdummy/screens/signupsignin/signupsigninscreen.dart';
+import 'package:dbdummy/screens/petDisplay/petDisplayScreen.dart';
 import 'package:dbdummy/screens/signupsignin/tabcontroller.dart';
 import 'package:dbdummy/screens/splashscreen.dart';
-//import 'package:dbdummy/screens/homescreen.dart';
-//import 'package:dbdummy/screens/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -44,17 +33,18 @@ class Myapp extends StatelessWidget {
         route.splashScreen: (context) => SplashScreen(),
         route.homeScreen: (context) => HomeScreen(),
         route.ownerScreen: (context) => OwnerScreen(),
-        route.buyerScreen: (context) => BuyerScreenn(),
-        route.confirmationScreen: (context) => ConfirmAdoption(context, buyerModel),
+        
+        route.confirmationScreen: (context) => ConfirmAdoption(context, buyerModel, mediaQuery),
         route.aboutUsScreen: (context) => AboutUsScreen(),
         route.temp: (context) => TabLoginController(),
         route.acceptorScreen: (context)=>AcceptorScreen(),
-        route.finalBuyer: (context) =>BuyerScreennn(),
-        route.petDisplay: (context)=> PetDisplay(),
+        
+        route.petDisplay: (context)=> PetDisplay(mediaQuery),
         
           route.accountScreen: (context) => AccountScreen(),
           route.chatScreen: (context) => ChatScreen(),
           route.chatWith: (context) => ChatWithContact(),
+          route.alreadyFilled:(context)=> AlreadyFilled(mediaQuery),
         
       },
     );

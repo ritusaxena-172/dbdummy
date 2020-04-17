@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dbdummy/components/appBar_style.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/model/accountscreenmodel.dart';
 // import 'package:dbdummy/model/sigin_model.dart';
@@ -57,7 +58,7 @@ class _AccountScreenState extends State<AccountScreen> {
           ),
           title: Text(
             'Edit Profile',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            style: style
           ),
           flexibleSpace: Container(
             decoration: boxDecoration,

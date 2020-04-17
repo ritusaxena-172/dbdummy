@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/model/chatwithModel.dart';
-// import 'package:dbdummy/model/chat%20withmodel.dart';
 import 'package:dbdummy/screens/chatscreen.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +22,6 @@ class ChatWithContactState extends State<ChatWithContact> {
     return Scaffold(
       appBar: AppBar(
         shape: RoundedRectangleBorder(
-          // borderRadius:BorderRadius.circular(80),
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
         ),
         centerTitle: true,
@@ -53,7 +51,6 @@ class ChatWithContactState extends State<ChatWithContact> {
             _chatWithModel.phoneNumber =
                 querySnapshot.documents[index].data['phone number'];
             _chatWithModel.userid = querySnapshot.documents[index].data['uid'];
-            // print(_chatWithModel.uid);
             return Card(
               child: GestureDetector(
                 child: ListTile(

@@ -1,14 +1,14 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dbdummy/components/appBar_style.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
+import 'package:dbdummy/database/currentUID.dart';
+import 'package:dbdummy/model/general_model.dart';
 // import 'package:dbdummy/provider/checkFormFilled.dart';
 // import 'package:dbdummy/provider/checkPetFormFilled.dart';
 import 'package:dbdummy/routes/routes.dart';
-// import 'package:dbdummy/screens/buyser2.dart';
-// import 'package:dbdummy/screens/buyserscreen.dart';
-import 'package:dbdummy/screens/ownerscreen.dart';
-import 'package:dbdummy/services/firebasestore.dart';
-import 'package:dbdummy/services/formfilledCheck.dart';
+// import 'package:dbdummy/services/firebasestore.dart';
+// import 'package:dbdummy/services/formfilledCheck.dart';
 import 'package:dbdummy/services/sharedprefs_services.dart';
 import 'package:dbdummy/services/siginwithgoogle.dart';
 import 'package:dbdummy/utils/color_services.dart';
@@ -21,6 +21,7 @@ class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
+MediaQueryy mediaQuery= MediaQueryy();
 DocumentSnapshot documentSnapshotAdopter;
 DocumentSnapshot documentSnapshotOwner;
 class _HomeScreenState extends State<HomeScreen> {
@@ -33,12 +34,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    mediaQuery.width= MediaQuery.of(context).size.width;
+   mediaQuery.height= MediaQuery.of(context).size.height; 
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
           title: Text(
             'PawSome!',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            style: style
           ),
           flexibleSpace: Container(
             decoration: boxDecoration,
@@ -51,7 +54,6 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Container(
                   height: 300,
                   width: 700,
-                  //  margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
                   child: Material(
                     elevation: 5.0,
                     shape: RoundedRectangleBorder(
@@ -105,12 +107,10 @@ class _HomeScreenState extends State<HomeScreen> {
                documentSnapshotAdopter=result;
                 });
               checkFormFilled(documentSnapshotAdopter,context);
-              // Navigator.pushNamed(context, Routes().acceptorScreen);
-            },
+               },
             child: Stack(
               children: <Widget>[
                 Container(
-                  //  padding: EdgeInsets.all(90),
                   margin: EdgeInsets.fromLTRB(10, 30, 80, 5),
                   height: 100,
                   width: 390,
@@ -142,7 +142,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 100,
                   width: 390,
                   color: Colors.green.withOpacity(0.6),
-                  // child: Text('Adopt a pet'),
                 ),
               ],
             ),
@@ -155,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 getDetails('PetDetails').then((result){
                documentSnapshotOwner=result;
                 });
-                checkPetFormFilled(documentSnapshotOwner, context);
+                checkPetFormFilled(documentSnapshotOwner, context, mediaQuery);
             },
             child: Stack(
               children: <Widget>[
@@ -200,63 +199,18 @@ class _HomeScreenState extends State<HomeScreen> {
             Expanded(
                 flex: 2,
                 child: Container(
+                  width: mediaQuery.width*.8,
+                  height: mediaQuery.height*.1,
+                  
                     margin: EdgeInsets.only(top: 60),
-                    child: Text('Adopt, don\'t shop!',
+                    child: Text('Don\'t shop, Adopt!',
                         style: TextStyle(
                           fontSize: 40,
                           color: secondcolor,
                           fontStyle: FontStyle.italic,
-                        )))),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //   children: <Widget>[
-            //     Expanded(
-            //       flex: 2,
-            //       child: Container(
-            //         margin: EdgeInsets.fromLTRB(20, 0, 10, 120),
-            //         child: RaisedButton(
-            //           color: firstcolor,
-            //           shape: RoundedRectangleBorder(
-            //               borderRadius: new BorderRadius.circular(40.0),
-            //               side: BorderSide(color: Colors.white)),
-            //           onPressed: () {
-            //             Navigator.push(
-            //                 context,
-            //                 MaterialPageRoute(
-            //                     builder: (context) => OwnerScreen()));
-            //           },
-            //           child: Text('Looking for shelter?'),
-            //           padding: EdgeInsets.all(10),
-            //         ),
-            //       ),
-            //     ),
-            //     Expanded(
-            //       flex: 2,
-            //       child: Container(
-            //         margin: EdgeInsets.fromLTRB(10, 0, 20, 120),
-            //         child: RaisedButton(
-            //           color: secondcolor,
-            //           shape: RoundedRectangleBorder(
-            //               borderRadius: new BorderRadius.circular(40.0),
-            //               side: BorderSide(color: Colors.white)),
-            //           onPressed: () {
-            //             getUID();
-            //             getDetails('AcceptorDetails').then((result){
-            //               documentSnapshot=result;
-
                          
-            //             });
-                        
-            //              checkFormFilled(documentSnapshot,context);
-            //           },
-            //           child: Text('Looking for adoption?'),
-            //           padding: EdgeInsets.all(10),
-            //         ),
-            //       ),
-            //     )
-            //   ],
-            // )
-       
+                        )))),
+            
           ]),
         ),
         drawer: Drawer(

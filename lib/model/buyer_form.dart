@@ -13,9 +13,8 @@ class BuyerForm{
   String _numberofPetsRes;
   String _occupation;
   String _familyMembers;
-// bool _validateUserWork = false;//donee
-String _userAge;//donee
-String _workingHours;//donee
+String _userAge;
+String _workingHours;
 bool _validateOtherPets = false;
 bool _validatePetDetails=false;
 bool _enableField=false;

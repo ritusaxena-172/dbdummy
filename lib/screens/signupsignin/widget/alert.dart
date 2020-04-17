@@ -1,15 +1,6 @@
 import 'package:dbdummy/model/sigin_model.dart';
 import 'package:flutter/material.dart';
 
-// alertMessage(errorMessage) {
-//  return AlertDialog alert = AlertDialog(
-//     title: Text(
-//       "Alert!",
-//       style: TextStyle(color: Colors.red),
-//     ),
-//     content: Text("errorMessage"),
-//   );
-// }
 
 showAlertDialog(BuildContext context, String errorMessage) {
   SignInModel signInModel = SignInModel();

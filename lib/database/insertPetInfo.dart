@@ -1,7 +1,9 @@
 import 'package:dbdummy/model/ownerscreen_model.dart';
 import 'package:dbdummy/routes/routes.dart';
+import 'package:dbdummy/screens/homescreen.dart';
 import 'package:dbdummy/screens/signupsignin/widget/signup.dart';
 import 'package:dbdummy/services/firebasestore.dart';
+import 'package:dbdummy/viewModel/checkConnectivity.dart';
 import 'package:flutter/material.dart';
 
 void insertingDtaFirebase(BuildContext context, OwnerScreenModel ownerScreenModel) async {
@@ -19,13 +21,14 @@ void insertingDtaFirebase(BuildContext context, OwnerScreenModel ownerScreenMode
   };
   
   petCollection.document(uid).setData(petInformation).then((_){
+    
      print('data set ${petName.text}');
                           petName.clear();
                             petAge.clear();
                             petBreed.clear();
                             petGender.clear();
                             petDescription.clear();
-                            
-       Navigator.pushReplacementNamed(context, Routes().petDisplay);                      
+          
+       Navigator.pushReplacementNamed(context, Routes().alreadyFilled);                      
   });
 }

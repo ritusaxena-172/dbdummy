@@ -1,6 +1,6 @@
+import 'package:dbdummy/database/currentUID.dart';
 import 'package:dbdummy/database/insertPetInfo.dart';
 import 'package:dbdummy/model/ownerscreen_model.dart';
-import 'package:dbdummy/services/firebasestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 

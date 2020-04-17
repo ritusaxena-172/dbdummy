@@ -1,20 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dbdummy/components/appBar_style.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/model/buyer_form.dart';
-// import 'package:dbdummy/provider/adopterScreen.dart';
-import 'package:dbdummy/screens/petDisplayScreen.dart';
-// import 'package:dbdummy/routes/routes.dart';
-// import 'package:dbdummy/screens/buyser2.dart';
-// import 'package:dbdummy/screens/petDisplayScreen.dart';
-import 'package:dbdummy/screens/signupsignin/widget/signup.dart';
-import 'package:dbdummy/services/firebasestore.dart';
-import 'package:dbdummy/services/formfilledCheck.dart';
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:dbdummy/utils/string_services.dart';
 import 'package:dbdummy/viewModel/adopterScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_formfield/dropdown_formfield.dart';
-// import 'package:dropdownfield/dropdownfield.dart';
 class AcceptorScreen extends StatefulWidget {
   @override
   _AcceptorScreenState createState() => _AcceptorScreenState();
@@ -45,7 +37,7 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
           centerTitle: true,
           title: Text(
             'User Registration form',
-            style: TextStyle(color: light, fontWeight: FontWeight.bold),
+            style: style
           ),
           flexibleSpace: Container(
             decoration: boxDecoration,
@@ -92,11 +84,7 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
                                         textField: 'display',
                                         valueField: 'value',
                                         value: buyerForm.userAge,
-                                // onSaved: (value) {
-                                //     setState(() {
-                                //    _myActivity = value;
-                                //     });
-                                // },
+                              
                                 onChanged: (value) {
                                         setState(() {
                                buyerForm.userAge = value;
@@ -128,11 +116,7 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
                                         textField: 'display',
                                         valueField: 'value',
                                         value: buyerForm.occupation,
-                                // onSaved: (value) {
-                                //     setState(() {
-                                //    _myActivity = value;
-                                //     });
-                                // },
+                                
                                 onChanged: (value) {
                                         setState(() {
                                buyerForm.occupation = value;
@@ -159,11 +143,7 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
                       textField: 'display',
                       valueField: 'value',
                       value: buyerForm.wfh,
-                      // onSaved: (value) {
-                      //     setState(() {
-                      //    _myActivity = value;
-                      //     });
-                      // },
+                    
                       onChanged: (value) {
                       setState(() {
              buyerForm.wfh = value;
@@ -207,11 +187,7 @@ Container(
                                         textField: 'display',
                                         valueField: 'value',
                                         value: buyerForm.familyMembers,
-                                // onSaved: (value) {
-                                //     setState(() {
-                                //    _myActivity = value;
-                                //     });
-                                // },
+                                
                                 onChanged: (value) {
                                         setState(() {
                                buyerForm.familyMembers = value;
@@ -241,11 +217,7 @@ Container(
                                         textField: 'display',
                                         valueField: 'value',
                                         value: buyerForm.numberofPets,
-                                // onSaved: (value) {
-                                //     setState(() {
-                                //    _myActivity = value;
-                                //     });
-                                // },
+                                
                                 onChanged: (value) {
                                         setState(() {
                                buyerForm.numberofPets = value;
@@ -284,29 +256,7 @@ Container(
                               ),
                             ),
                     
-          // Row(
-          //   children: <Widget>[
-          //     Checkbox(
-          //       activeColor: buyerForm.checkBox1 ? green: light,
-          //       value: buyerForm.checkBox1,
-          //       onChanged: (bool value) {
-          //        setState(() {
-          //          buyerForm.checkBox1=value;
-          //        }); 
-                  
-          //       }, 
-          //     ),
-          //     Expanded(
-          //       child: Container(
-          //             padding: EdgeInsets.all(10),
-          //             child: Text('$agreement',style: TextStyle(
-          //         fontStyle: FontStyle.italic,
-          //         color: Colors.black
-          //             ),),
-          //           ),
-          //     ),
-          //   ],
-          // ),
+          
           Row(
             children: <Widget>[
               Checkbox(

@@ -8,11 +8,7 @@ Map <int, bool> favPets={0: false};
   
 PetDisplayModel petDisplayModel= PetDisplayModel(); 
 class BuyerModel {
-  // String petname;
-  
-  // String age;
-  // String breed;
-  
+
   String _imageURL;
   bool _favourite=false;
   String _petUID;

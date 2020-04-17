@@ -1,3 +1,4 @@
+import 'package:dbdummy/components/appBar_style.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class AboutUsScreen extends StatelessWidget {
         centerTitle: true,
         title: Text(
           'About us',
-          style: TextStyle(color: light, fontWeight: FontWeight.bold),
+          style: style
         ),
         flexibleSpace: Container(
           decoration: boxDecoration,
