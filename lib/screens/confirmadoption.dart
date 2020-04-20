@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dbdummy/components/appBar_style.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
+import 'package:dbdummy/database/fetchPetDetails.dart';
 import 'package:dbdummy/model/buyer_model.dart';
 import 'package:dbdummy/model/general_model.dart';
 import 'package:dbdummy/model/petDisplayModel.dart';
@@ -34,17 +35,14 @@ Future share(String path) async {
 void initState() 
 {
   print('inside initState');
-  getDetailsOwner().then((result){
+  getDetailsOwner(buyerModel).then((result){
     setState(() {
       documentSnapshot=result;
     });
   });
   super.initState();
 }
- getDetailsOwner() async {
-      print('current uid  is ${buyerModel.petUID}');
-      return await Firestore.instance.collection('users').document(buyerModel.petUID).get();
-    }
+ 
 
   QuerySnapshot queryySnapshot;
   var groupInfo;
@@ -168,12 +166,12 @@ void initState()
                   RaisedButton(
                   padding: EdgeInsets.all(15),
                   onPressed: (){
-                    getDetailsOwner().then((result){
+                    getDetailsOwner(buyerModel).then((result){
                   setState(() {
                     documentSnapshot=result;
                   });
                     });
-                  
+                
                       Navigator.push(
                           context,
                           MaterialPageRoute(

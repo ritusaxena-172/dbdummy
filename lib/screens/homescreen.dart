@@ -16,6 +16,7 @@ import 'package:dbdummy/utils/string_services.dart';
 import 'package:dbdummy/viewModel/checkFormFilled.dart';
 import 'package:dbdummy/viewModel/checkPetFormFilled.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -28,6 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
   String ksharedemail = '';
   @override
   void initState() {
+    SystemChannels.textInput.invokeMethod('TextInput.hide');
     getPreference().then(updateName);
     super.initState();
   }

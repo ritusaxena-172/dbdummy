@@ -16,4 +16,5 @@ String accountScreen = '/accountScreen';
   String chatScreen = '/chatScreen';
   String chatWith='/chat With';
   String alreadyFilled='/alreadyFilled';
+  String adopterDisplay='/adopterDisplay';
 }

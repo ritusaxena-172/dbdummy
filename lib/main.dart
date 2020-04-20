@@ -3,6 +3,7 @@ import 'package:dbdummy/routes/routes.dart';
 import 'package:dbdummy/screens/aboutus.dart';
 import 'package:dbdummy/screens/accountScreen.dart';
 import 'package:dbdummy/screens/adopter.dart';
+import 'package:dbdummy/screens/adoptersDisplay.dart';
 import 'package:dbdummy/screens/alreadyfilled.dart';
 import 'package:dbdummy/screens/chatScreen.dart';
 import 'package:dbdummy/screens/chatwithContacts.dart';
@@ -45,6 +46,7 @@ class Myapp extends StatelessWidget {
           route.chatScreen: (context) => ChatScreen(),
           route.chatWith: (context) => ChatWithContact(),
           route.alreadyFilled:(context)=> AlreadyFilled(mediaQuery),
+          route.adopterDisplay:(context)=> AdoptersDisplay(mediaQuery),
         
       },
     );

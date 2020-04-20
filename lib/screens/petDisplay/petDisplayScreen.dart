@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dbdummy/components/appBar_style.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
+import 'package:dbdummy/database/fetchPetDetails.dart';
 import 'package:dbdummy/model/buyer_model.dart';
 import 'package:dbdummy/model/general_model.dart';
 import 'package:dbdummy/model/petDisplayModel.dart';
@@ -25,9 +26,7 @@ PetDisplayModel petDisplayModel= PetDisplayModel();
   Pet pet;
   int length;
   QuerySnapshot querySnapshot;
-  getPetInformation() async{
-    return await Firestore.instance.collection('PetDetails').getDocuments();
-  }
+  
   @override
   Widget build(BuildContext context) {
       return Scaffold(
@@ -52,7 +51,7 @@ PetDisplayModel petDisplayModel= PetDisplayModel();
   }
    
   Widget firebaseData(){
-     getPetInformation().then((results){
+     getPetInformation('PetDetails').then((results){
        setState(() {
           querySnapshot=results;
        });

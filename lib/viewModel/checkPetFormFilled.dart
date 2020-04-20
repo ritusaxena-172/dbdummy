@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
                         {
                           
                         
-                          Navigator.pushNamed(context, Routes().alreadyFilled);  
+                          Navigator.pushNamed(context, Routes().adopterDisplay);  
                         }
                         else if(!documentSnapshot.exists)
                         {
@@ -17,6 +17,6 @@ import 'package:flutter/material.dart';
                         }
                         else
                         {
-                           CircularProgressIndicator();
+                           Center(child: CircularProgressIndicator());
                         }
 }
