@@ -84,32 +84,27 @@ class _AdoptersDisplayState extends State<AdoptersDisplay> {
           //  
           return Card(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Center(
-                child: Container(
-                  margin:  EdgeInsets.only(left: 12.0, top: 12.0, bottom: 8),
-                  child: Text('ID: $index',),
-                ),
-              ),
+              
               Expanded(
                               child: Container(
-                  margin:  EdgeInsets.only(left: 12.0,bottom: 8),
+                  margin:  EdgeInsets.only(left: 12.0,),
                   child: Text('Age: ${querySnapshot.documents[index].data['userAge']}', 
                   style: TextStyle(color: firstcolor,fontSize: 15),),
                 ),
               ),
               Expanded(
                               child: Container(
-                   margin:  EdgeInsets.only(left: 12.0,bottom: 8),
+                   margin:  EdgeInsets.only(left: 12.0,),
                   child: Text('${querySnapshot.documents[index].data['userOccupation']}', 
                   style: TextStyle(color: firstcolor,fontSize: 15),),
                 ),
               ),
               Expanded(
                               child: Container(
-                   margin:  EdgeInsets.only(left: 12.0,bottom: 8),
+                   margin:  EdgeInsets.only(left: 12.0,),
                   child: Text(temp, style: TextStyle(
                     fontSize: 15,
                     color: firstcolor),),
@@ -117,14 +112,14 @@ class _AdoptersDisplayState extends State<AdoptersDisplay> {
               ),
               Expanded(
                               child: Container(
-                   margin:  EdgeInsets.only(left: 12.0,bottom: 8),
+                   margin:  EdgeInsets.only(left: 12.0,),
                   child: Text(numberofpets, 
                   style: TextStyle(color: firstcolor,fontSize: 15),),
                 ),
               ),
                Expanded(
                                 child: Container(
-                   margin:  EdgeInsets.only(left: 12.0,bottom: 8),
+                   margin:  EdgeInsets.only(left: 12.0,),
                   child: Text('Family Members: ${querySnapshot.documents[index].data['userFamilyMembers']}', 
                   style: TextStyle(color: firstcolor,fontSize: 15),),
               ),
@@ -132,7 +127,7 @@ class _AdoptersDisplayState extends State<AdoptersDisplay> {
               Expanded(
                        child: GestureDetector(
                      child: Container(
-                   margin:  EdgeInsets.only(left: 12.0, bottom: 5),
+                   margin:  EdgeInsets.only(left: 12.0, ),
                   child: Text('Chat with him', 
                   style: TextStyle(color: firstcolor,fontSize: 15),),
               ),

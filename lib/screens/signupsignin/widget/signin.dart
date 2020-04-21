@@ -138,9 +138,9 @@ class _SigninState extends State<Signin> {
                       color: firstcolor,
                       shape: buttonborder,
                       onPressed: () async {
-                        setState(() {
-                          signInModel.isLoading = true;
-                        });
+                        // setState(() {
+                        //   signInModel.isLoading = true;
+                        // });
                         onPressedLogin(context, signInModel);
                       },
                       child: Text('SignIn'),

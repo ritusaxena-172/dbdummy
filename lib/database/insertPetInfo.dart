@@ -29,6 +29,6 @@ void insertingDtaFirebase(BuildContext context, OwnerScreenModel ownerScreenMode
                             petGender.clear();
                             petDescription.clear();
           
-       Navigator.pushReplacementNamed(context, Routes().alreadyFilled);                      
+       Navigator.pushReplacementNamed(context, Routes().adopterDisplay);                      
   });
 }

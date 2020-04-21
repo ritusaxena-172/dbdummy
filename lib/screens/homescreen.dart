@@ -49,6 +49,66 @@ class _HomeScreenState extends State<HomeScreen> {
             decoration: boxDecoration,
           ),
         ),
+        
+
+
+              drawer: Drawer(
+            child: ListView(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: null,
+              accountEmail: Text(ksharedemail),
+              decoration: BoxDecoration(
+                color: secondcolor,
+              ),
+              currentAccountPicture: CircleAvatar(
+                child: Icon(Icons.person),
+                backgroundColor: firstcolor,
+              ),
+              margin: EdgeInsets.only(bottom: 10),
+            ),
+            Card(
+                child: ListTile(
+                    leading: Icon(Icons.account_circle, color: firstcolor),
+                    title: Text('My Account'),
+                    onTap: () {
+                      Navigator.pushNamed(context, Routes().accountScreen);
+                    })),
+            Card(
+                child: ListTile(
+                    leading:
+                        Icon(Icons.perm_contact_calendar, color: firstcolor),
+                    title: Text('About us'),
+                    onTap: () {
+                      Navigator.pushNamed(context, Routes().aboutUsScreen);
+                    })),
+            Card(
+                child: ListTile(
+                    leading: Icon(Icons.power_settings_new, color: firstcolor),
+                    title: Text('Log Out'),
+                    onTap: () {
+                      signOutGoogle();
+                      Navigator.pushNamed(context, Routes().splashScreen);
+                    }))
+          ],
+        )),
+  
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         body: Container(
           child: Column(children: <Widget>[
             Align(
@@ -215,36 +275,7 @@ class _HomeScreenState extends State<HomeScreen> {
             
           ]),
         ),
-        drawer: Drawer(
-            child: ListView(
-          children: <Widget>[
-            UserAccountsDrawerHeader(
-              accountName: null,
-              accountEmail: Text(ksharedemail),
-              decoration: BoxDecoration(
-                color: secondcolor,
-              ),
-              currentAccountPicture: CircleAvatar(
-                child: Icon(Icons.person),
-                backgroundColor: firstcolor,
-              ),
-              margin: EdgeInsets.only(bottom: 10),
-            ),
-            Card(
-                child: ListTile(
-                    title: Text('About us'),
-                    onTap: () {
-                      Navigator.pushNamed(context, Routes().aboutUsScreen);
-                    })),
-            Card(
-                child: ListTile(
-                    title: Text('Log Out'),
-                    onTap: () {
-                      signOutGoogle();
-                      Navigator.pushNamed(context, Routes().splashScreen);
-                    }))
-          ],
-        )));
+    );
   }
 
 //update name for shared preferences

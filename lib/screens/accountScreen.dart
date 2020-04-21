@@ -1,12 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dbdummy/components/appBar_style.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
+import 'package:dbdummy/database/getAccountDetails.dart';
 import 'package:dbdummy/model/accountscreenmodel.dart';
-// import 'package:dbdummy/model/sigin_model.dart';
-// import 'package:dbdummy/provider/accountscreen.dart';
-import 'package:dbdummy/services/firebasestore.dart';
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:dbdummy/viewModel/accountScreen.dart';
+import 'package:dbdummy/viewModel/accountdetails.dart';
 import 'package:flutter/material.dart';
 
 final kaccountKey = GlobalKey<FormState>();
@@ -20,32 +17,6 @@ class _AccountScreenState extends State<AccountScreen> {
   var dataFirebase = new List();
   AccountScreenModel accountScreenModel = AccountScreenModel();
 
-  getInformation() async {
-    print('here');
-    final data = await Firestore.instance
-        .collection('users')
-        .document(signInModel1.uid)
-        .get();
-    dataFirebase.add(data.data['name']);
-    dataFirebase.add(data.data['phone number']);
-    return dataFirebase;
-  }
-
-  assignVales() {
-    accountScreenModel.editName =
-        TextEditingController(text: accountScreenModel.name);
-    // selection: accountScreenModel.editName.selection);
-    accountScreenModel.editPhone.value = TextEditingValue(
-        text: accountScreenModel.phone,
-        selection: accountScreenModel.editPhone.selection);
-    var cursorPos = accountScreenModel.editName.selection;
-    if (cursorPos.start > accountScreenModel.editName.text.length) {
-      cursorPos = new TextSelection.fromPosition(
-          new TextPosition(offset: accountScreenModel.editName.text.length));
-    }
-    accountScreenModel.editName.selection = cursorPos;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +29,7 @@ class _AccountScreenState extends State<AccountScreen> {
           ),
           title: Text(
             'Edit Profile',
-            style: style
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           flexibleSpace: Container(
             decoration: boxDecoration,
@@ -74,18 +45,18 @@ class _AccountScreenState extends State<AccountScreen> {
                 accountScreenModel.enabletextfield =
                     !accountScreenModel.enabletextfield;
                 if (accountScreenModel.enabletextfield == true) {
-                  onPressedAccountScreen(accountScreenModel);
+                  onPressedAccountScreen(accountScreenModel, context);
                 }
               });
             }),
         body: FutureBuilder(
-            future: getInformation(),
+            future: getInformation(dataFirebase),
             builder: (BuildContext context, AsyncSnapshot snapshot) {
               List<dynamic> data = dataFirebase;
               if (snapshot.hasData) {
                 accountScreenModel.name = data[0];
                 accountScreenModel.phone = data[1];
-                assignVales();
+                assignVales(accountScreenModel);
                 return Form(
                     key: kaccountKey,
                     child: ListView(
@@ -104,17 +75,11 @@ class _AccountScreenState extends State<AccountScreen> {
                         TextField(
                           controller: accountScreenModel.editName,
                           enabled: accountScreenModel.enabletextfield,
-                          //initialValue: accountScreenModel.name.text,
-                          //autovalidate: accountScreenModel.validateName,
                           onEditingComplete: () {
                             setState(() {
                               accountScreenModel.validateName = true;
-                              // accountScreenModel.enabletextfield =
-                              //     !accountScreenModel.enabletextfield;
-                              // autovalidateemail = true;
                             });
                           },
-                          // validator: nameValidation,
                           onChanged: ((value) {
                             setState(() {
                               accountScreenModel.editName.text = value;
@@ -136,18 +101,13 @@ class _AccountScreenState extends State<AccountScreen> {
                         TextField(
                           controller: accountScreenModel.editPhone,
                           enabled: accountScreenModel.enabletextfield,
-                          //initialValue: accountScreenModel.phone.text,
-
-                          // autovalidate: accountScreenModel.validatePhone,
                           onEditingComplete: () {
                             setState(() {
                               accountScreenModel.validatePhone = true;
                               accountScreenModel.enabletextfield =
                                   !accountScreenModel.enabletextfield;
-                              // autovalidateemail = true;
                             });
                           },
-                          // validator: numberValidation,
                           onChanged: ((value) {
                             setState(() {
                               accountScreenModel.editPhone.text = value;
