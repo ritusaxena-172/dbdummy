@@ -1,9 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+<<<<<<< HEAD
 import 'package:dbdummy/components/appBar_style.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/model/buyer_form.dart';
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:dbdummy/utils/string_services.dart';
+=======
+import 'package:dbdummy/components/appbar.dart';
+import 'package:dbdummy/components/dataSource.dart';
+import 'package:dbdummy/model/buyer_form.dart';
+import 'package:dbdummy/utils/color_services.dart';
+import 'package:dbdummy/utils/string_services.dart';
+import 'package:dbdummy/viewModel/adopter.dart';
+>>>>>>> 176096e... c_fina
 import 'package:dbdummy/viewModel/adopterScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_formfield/dropdown_formfield.dart';
@@ -19,7 +28,10 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
   DocumentSnapshot tempo;
   @override
   void initState() {
+<<<<<<< HEAD
    
+=======
+>>>>>>> 176096e... c_fina
     super.initState();
     buyerForm.wfh = '';
     buyerForm.wfhResult = '';
@@ -27,12 +39,16 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
     buyerForm.numberofPetsRes='';
     buyerForm.userAge='';
   }
+<<<<<<< HEAD
  
  
+=======
+>>>>>>> 176096e... c_fina
   @override
   Widget build(BuildContext context) {
     return 
     Scaffold(
+<<<<<<< HEAD
       appBar: AppBar(
           centerTitle: true,
           title: Text(
@@ -50,6 +66,12 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
     );
   }
   
+=======
+      appBar: func('User Registration Form'),
+        body: formFunction(),
+    );
+  }
+>>>>>>> 176096e... c_fina
   Widget formFunction()
   {
    return  Form(
@@ -92,7 +114,10 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
                                 },
                                titleText: 'Select your age',
                                hintText: 'Please choose one',
+<<<<<<< HEAD
                                
+=======
+>>>>>>> 176096e... c_fina
                                         ),
                             ),
                               Container(
@@ -124,13 +149,17 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
                                 },
                                titleText: 'Select your occupation',
                                hintText: 'Please choose one',
+<<<<<<< HEAD
                                
+=======
+>>>>>>> 176096e... c_fina
                                         ),
                             ),
 
                             Container(
                               padding: EdgeInsets.all(15),
                               child: DropDownFormField(
+<<<<<<< HEAD
                       // textField: 
              dataSource: [{
              "display": "Yes",
@@ -140,6 +169,10 @@ class _AcceptorScreenState extends State<AcceptorScreen> {
              "display": "No",
              "value": "No",
                       },],
+=======
+                      
+             dataSource: dataSource,
+>>>>>>> 176096e... c_fina
                       textField: 'display',
                       valueField: 'value',
                       value: buyerForm.wfh,
@@ -205,6 +238,7 @@ Container(
                             Container(
                               padding: EdgeInsets.all(15),
                                   child: DropDownFormField(
+<<<<<<< HEAD
                                dataSource: [{
                               "display": "yes",
              "value": "yes",
@@ -214,6 +248,9 @@ Container(
              "value": "no",
                       },
                                         ],
+=======
+                               dataSource: dataSource,
+>>>>>>> 176096e... c_fina
                                         textField: 'display',
                                         valueField: 'value',
                                         value: buyerForm.numberofPets,
@@ -221,6 +258,7 @@ Container(
                                 onChanged: (value) {
                                         setState(() {
                                buyerForm.numberofPets = value;
+<<<<<<< HEAD
                                if(value=='yes')
                                {
                                  buyerForm.enableField=true;
@@ -228,6 +266,10 @@ Container(
                                else{
                                  buyerForm.enableField=false;
                                }
+=======
+
+                               enable(buyerForm);
+>>>>>>> 176096e... c_fina
                                         });
                                 },
                                titleText: 'Do you have other pets also?',

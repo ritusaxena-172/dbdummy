@@ -2,9 +2,12 @@ import 'package:dbdummy/routes/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+<<<<<<< HEAD
 
 // import 'firebasestore.dart';
 
+=======
+>>>>>>> 176096e... c_fina
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
 

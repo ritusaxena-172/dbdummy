@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+<<<<<<< HEAD
 import 'package:dbdummy/components/appBar_style.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/components/text_style.dart';
@@ -12,6 +13,17 @@ import 'package:dbdummy/screens/homescreen.dart';
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:flutter/material.dart';
 
+=======
+import 'package:dbdummy/components/appbar.dart';
+import 'package:dbdummy/database/fetchPetDetails.dart';
+import 'package:dbdummy/model/buyer_form.dart';
+import 'package:dbdummy/model/general_model.dart';
+import 'package:dbdummy/screens/chatScreen.dart';
+import 'package:dbdummy/utils/color_services.dart';
+import 'package:dbdummy/viewModel/adopterDisplay.dart';
+import 'package:dbdummy/viewModel/firebaseerrors.dart';
+import 'package:flutter/material.dart';
+>>>>>>> 176096e... c_fina
 class AdoptersDisplay extends StatefulWidget {
   AdoptersDisplay(MediaQueryy mediaQuery);
   @override
@@ -19,12 +31,18 @@ class AdoptersDisplay extends StatefulWidget {
 }
 BuyerForm buyerForm= BuyerForm();
 class _AdoptersDisplayState extends State<AdoptersDisplay> {
+<<<<<<< HEAD
+=======
+  
+    
+>>>>>>> 176096e... c_fina
  QuerySnapshot querySnapshot;
  DocumentSnapshot query;
  String workStatus, temp, numberofpets, uids;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
       appBar: AppBar(
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
@@ -39,17 +57,36 @@ class _AdoptersDisplayState extends State<AdoptersDisplay> {
           ),
       ),
     
+=======
+      appBar: func('Interested Adopters'),
+  
+>>>>>>> 176096e... c_fina
       body: adopterDisplay(),
     );
   }
  Widget adopterDisplay()
   {
+<<<<<<< HEAD
     getPetInformation('AcceptorDetails').then((result){
       setState(() {
          querySnapshot=result;
       });
      
     });
+=======
+    try{
+      getPetInformation('AcceptorDetails').then((result){
+      setState(() {
+         querySnapshot=result;
+      });
+    });
+
+    }catch(error)
+    {
+      catchFirebaseErrors(context, error);
+    }
+    
+>>>>>>> 176096e... c_fina
     if(querySnapshot!=null)
     {
       return GridView.builder(
@@ -61,6 +98,7 @@ class _AdoptersDisplayState extends State<AdoptersDisplay> {
           crossAxisCount: 2),
          itemCount: querySnapshot.documents.length,
         itemBuilder: (BuildContext context,index)
+<<<<<<< HEAD
       
         {
            workStatus= querySnapshot.documents[index].data['workType'];
@@ -82,28 +120,49 @@ class _AdoptersDisplayState extends State<AdoptersDisplay> {
              numberofpets='No other pets'; 
            }
           //  
+=======
+        {
+           workStatus= querySnapshot.documents[index].data['workType'];
+           temp=checkWorkStatus(workStatus);
+           
+           numberofpets=querySnapshot.documents[index].data['numberOfPets'];
+           numberofpets=checkNumberofPets(numberofpets);
+>>>>>>> 176096e... c_fina
           return Card(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+<<<<<<< HEAD
               
               Expanded(
                               child: Container(
+=======
+              Expanded(
+                  child: Container(
+>>>>>>> 176096e... c_fina
                   margin:  EdgeInsets.only(left: 12.0,),
                   child: Text('Age: ${querySnapshot.documents[index].data['userAge']}', 
                   style: TextStyle(color: firstcolor,fontSize: 15),),
                 ),
               ),
               Expanded(
+<<<<<<< HEAD
                               child: Container(
+=======
+                 child: Container(
+>>>>>>> 176096e... c_fina
                    margin:  EdgeInsets.only(left: 12.0,),
                   child: Text('${querySnapshot.documents[index].data['userOccupation']}', 
                   style: TextStyle(color: firstcolor,fontSize: 15),),
                 ),
               ),
               Expanded(
+<<<<<<< HEAD
                               child: Container(
+=======
+                    child: Container(
+>>>>>>> 176096e... c_fina
                    margin:  EdgeInsets.only(left: 12.0,),
                   child: Text(temp, style: TextStyle(
                     fontSize: 15,
@@ -111,14 +170,22 @@ class _AdoptersDisplayState extends State<AdoptersDisplay> {
                 ),
               ),
               Expanded(
+<<<<<<< HEAD
                               child: Container(
+=======
+                 child: Container(
+>>>>>>> 176096e... c_fina
                    margin:  EdgeInsets.only(left: 12.0,),
                   child: Text(numberofpets, 
                   style: TextStyle(color: firstcolor,fontSize: 15),),
                 ),
               ),
                Expanded(
+<<<<<<< HEAD
                                 child: Container(
+=======
+                   child: Container(
+>>>>>>> 176096e... c_fina
                    margin:  EdgeInsets.only(left: 12.0,),
                   child: Text('Family Members: ${querySnapshot.documents[index].data['userFamilyMembers']}', 
                   style: TextStyle(color: firstcolor,fontSize: 15),),
@@ -133,10 +200,14 @@ class _AdoptersDisplayState extends State<AdoptersDisplay> {
               ),
               onTap: (){
                 uids=querySnapshot.documents[index].data['UID'];
+<<<<<<< HEAD
                 print(uids);
 
                 getDetailsAdopter(uids).then((result){
                   print('here ia m');
+=======
+                getDetailsAdopter(uids).then((result){
+>>>>>>> 176096e... c_fina
                   setState(() {
                     query=result;
                   });
@@ -160,6 +231,7 @@ class _AdoptersDisplayState extends State<AdoptersDisplay> {
                ),
             ],
             ),
+<<<<<<< HEAD
             // height: mediaQuery.height*.09,
             // decoration: BoxDecoration(
             //   borderRadius: BorderRadius.circular(20),
@@ -179,6 +251,9 @@ class _AdoptersDisplayState extends State<AdoptersDisplay> {
             //     },
             //  ),
           );
+=======
+           );
+>>>>>>> 176096e... c_fina
         }, 
       );
       }

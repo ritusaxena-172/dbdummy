@@ -2,8 +2,11 @@ import 'package:dbdummy/database/adopterRegistrationForm.dart';
 import 'package:dbdummy/database/currentUID.dart';
 import 'package:dbdummy/model/buyer_form.dart';
 import 'package:dbdummy/screens/adopter.dart';
+<<<<<<< HEAD
 import 'package:dbdummy/screens/signupsignin/widget/alert.dart';
 import 'package:dbdummy/utils/string_services.dart';
+=======
+>>>>>>> 176096e... c_fina
 import 'package:flutter/material.dart';
 String errorMessage;
 onPressedSave(BuildContext context, BuyerForm buyerForm)
@@ -26,6 +29,7 @@ onPressAdopter(BuildContext context, BuyerForm buyerForm)
             else{
               print('you need to abide by the tnc');            }
           
+<<<<<<< HEAD
 }
 switchFunction(BuildContext context,error)
 {
@@ -47,4 +51,6 @@ switchFunction(BuildContext context,error)
         showAlertDialog(context, errorMessage);
         
         }
+=======
+>>>>>>> 176096e... c_fina
 }

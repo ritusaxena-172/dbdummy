@@ -38,8 +38,12 @@ class _TabLoginControllerState extends State<TabLoginController> {
               Signin(),
               Signup(),
             ],
+<<<<<<< HEAD
             //controller: _tabController,
           ),
+=======
+           ),
+>>>>>>> 176096e... c_fina
         ));
   }
 }

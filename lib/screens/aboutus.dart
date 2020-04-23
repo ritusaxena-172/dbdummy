@@ -1,12 +1,17 @@
+<<<<<<< HEAD
 import 'package:dbdummy/components/appBar_style.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/utils/color_services.dart';
+=======
+import 'package:dbdummy/components/appbar.dart';
+>>>>>>> 176096e... c_fina
 import 'package:flutter/material.dart';
 
 class AboutUsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
       appBar: AppBar(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(80),
@@ -20,6 +25,9 @@ class AboutUsScreen extends StatelessWidget {
           decoration: boxDecoration,
         ),
       ),
+=======
+      appBar:func('About Us'),
+>>>>>>> 176096e... c_fina
       body: Container(
         child: Center(
             child: Text(

@@ -1,12 +1,18 @@
 import 'package:dbdummy/model/sigin_model.dart';
+<<<<<<< HEAD
 // import 'package:dbdummy/provider/signin.dart';
 // import 'package:dbdummy/provider/validators.dart';
+=======
+>>>>>>> 176096e... c_fina
 import 'package:dbdummy/screens/signupsignin/widget/background.dart';
 import 'package:dbdummy/screens/signupsignin/widget/dialogbox.dart';
 import 'package:dbdummy/services/siginwithgoogle.dart';
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:dbdummy/utils/decorations.dart';
+<<<<<<< HEAD
 // import 'package:dbdummy/utils/images.dart';
+=======
+>>>>>>> 176096e... c_fina
 import 'package:dbdummy/utils/string_services.dart';
 import 'package:dbdummy/viewModel/signin.dart';
 import 'package:dbdummy/viewModel/validators.dart';
@@ -28,6 +34,7 @@ class _SigninState extends State<Signin> {
       child: Stack(children: <Widget>[
         Background(),
         Container(
+<<<<<<< HEAD
           // child: signInModel.loading
           //     ? Center(
           //         child: CircularProgressIndicator(),
@@ -37,6 +44,10 @@ class _SigninState extends State<Signin> {
             child: ListView(
                 //mainAxisAlignment: MainAxisAlignment.start,
                 //crossAxisAlignment: CrossAxisAlignment.center,
+=======
+          child: Container(
+            child: ListView(
+>>>>>>> 176096e... c_fina
                 children: <Widget>[
                   SizedBox(
                     height: 50,
@@ -46,7 +57,10 @@ class _SigninState extends State<Signin> {
                     onEditingComplete: () {
                       setState(() {
                         signInModel.autovalidateemail = true;
+<<<<<<< HEAD
                         // autovalidateemail = true;
+=======
+>>>>>>> 176096e... c_fina
                       });
                     },
                     validator: emailValidation,

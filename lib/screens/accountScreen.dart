@@ -50,7 +50,11 @@ class _AccountScreenState extends State<AccountScreen> {
               });
             }),
         body: FutureBuilder(
+<<<<<<< HEAD
             future: getInformation(dataFirebase),
+=======
+            future: getInformation(dataFirebase, context),
+>>>>>>> 176096e... c_fina
             builder: (BuildContext context, AsyncSnapshot snapshot) {
               List<dynamic> data = dataFirebase;
               if (snapshot.hasData) {

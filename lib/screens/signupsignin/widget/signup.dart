@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dbdummy/model/signup_model.dart';
 // import 'package:dbdummy/provider/signup.dart';
@@ -6,11 +7,18 @@ import 'package:dbdummy/model/signup_model.dart';
 // import 'package:dbdummy/screens/signupsignin/tabcontroller.dart';
 import 'package:dbdummy/screens/signupsignin/widget/background.dart';
 // import 'package:dbdummy/services/firebasesignup_services.dart';
+=======
+import 'package:dbdummy/model/signup_model.dart';
+import 'package:dbdummy/screens/signupsignin/widget/background.dart';
+>>>>>>> 176096e... c_fina
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:dbdummy/utils/decorations.dart';
 import 'package:dbdummy/viewModel/signup.dart';
 import 'package:dbdummy/viewModel/validators.dart';
+<<<<<<< HEAD
 // import 'package:firebase_auth/firebase_auth.dart';
+=======
+>>>>>>> 176096e... c_fina
 import 'package:flutter/material.dart';
 
 final ksigupformKey = GlobalKey<FormState>();
@@ -24,6 +32,7 @@ String uid;
 
 class _SignupState extends State<Signup> {
   SignUpModel signUpModel = SignUpModel();
+<<<<<<< HEAD
   // void add() async {
   //   uid = (await FirebaseAuth.instance.currentUser()).uid;
   //   print('firebase function');
@@ -52,12 +61,15 @@ class _SignupState extends State<Signup> {
   //   }
   // }
 
+=======
+>>>>>>> 176096e... c_fina
   @override
   Widget build(BuildContext context) {
     return Form(
         key: ksigupformKey,
         child: Stack(children: <Widget>[
           Background(),
+<<<<<<< HEAD
           // Column(mainAxisAlignment: MainAxisAlignment.center,
           //     // crossAxisAlignment: CrossAxisAlignment.center,
           //     children: <Widget>[
@@ -73,6 +85,9 @@ class _SignupState extends State<Signup> {
             //   child: Container(
             // padding: EdgeInsets.all(10),
             // margin: EdgeInsets.all(10),
+=======
+          ListView(children: <Widget>[
+>>>>>>> 176096e... c_fina
             SizedBox(
               height: 90,
             ),
@@ -93,7 +108,10 @@ class _SignupState extends State<Signup> {
                 ),
                 labelText: 'Name',
                 hintStyle: TextStyle(color: firstcolor),
+<<<<<<< HEAD
                 //icon: Icon(Icons.person, color: firstcolor),
+=======
+>>>>>>> 176096e... c_fina
               ),
               validator: nameValidation,
               onChanged: (value) {
@@ -102,6 +120,7 @@ class _SignupState extends State<Signup> {
                 });
               },
             ),
+<<<<<<< HEAD
             //   ),
             // ),
             // Expanded(
@@ -111,6 +130,8 @@ class _SignupState extends State<Signup> {
             //     padding: EdgeInsets.all(10),
             //     margin: EdgeInsets.all(10),
             //     child:
+=======
+>>>>>>> 176096e... c_fina
             SizedBox(
               height: 50,
             ),
@@ -139,6 +160,7 @@ class _SignupState extends State<Signup> {
                 });
               },
             ),
+<<<<<<< HEAD
             //   ),
             // ),
             //phone number
@@ -149,6 +171,8 @@ class _SignupState extends State<Signup> {
             //     padding: EdgeInsets.all(10),
             //     margin: EdgeInsets.all(10),
             //     child:
+=======
+>>>>>>> 176096e... c_fina
             SizedBox(
               height: 50,
             ),
@@ -177,6 +201,7 @@ class _SignupState extends State<Signup> {
                 });
               },
             ),
+<<<<<<< HEAD
 
             //for password
             // Expanded(
@@ -187,6 +212,9 @@ class _SignupState extends State<Signup> {
             //     margin: EdgeInsets.all(10),
             //  child:
             SizedBox(
+=======
+         SizedBox(
+>>>>>>> 176096e... c_fina
               height: 50,
             ),
             TextFormField(
@@ -230,6 +258,7 @@ class _SignupState extends State<Signup> {
                 });
               },
             ),
+<<<<<<< HEAD
             // Expanded(
             //   flex: 1,
             //   child: Container(
@@ -239,6 +268,8 @@ class _SignupState extends State<Signup> {
             //     padding: EdgeInsets.all(10),
             //     margin: EdgeInsets.all(10),
             //     child:
+=======
+>>>>>>> 176096e... c_fina
             SizedBox(
               height: 50,
             ),

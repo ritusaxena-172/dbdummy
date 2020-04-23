@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import 'package:dbdummy/components/appBar_style.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
@@ -5,6 +6,12 @@ import 'package:dbdummy/database/uploadImage.dart';
 import 'package:dbdummy/model/ownerscreen_model.dart';
 import 'package:dbdummy/model/sqflite_model.dart';
 import 'package:dbdummy/routes/routes.dart';
+=======
+import 'package:dbdummy/components/appbar.dart';
+import 'package:dbdummy/database/uploadImage.dart';
+import 'package:dbdummy/model/ownerscreen_model.dart';
+import 'package:dbdummy/model/sqflite_model.dart';
+>>>>>>> 176096e... c_fina
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:dbdummy/utils/decorations.dart';
 import 'package:dbdummy/utils/string_services.dart';
@@ -25,15 +32,21 @@ class _OwnerScreenState extends State<OwnerScreen> {
     if (image != null) {
       setState(() {
         ownerScreenModel.imageFile = image;
+<<<<<<< HEAD
         print('image is clicked');
       });
     } else {
       print("can't click image");
+=======
+      });
+    } else {
+>>>>>>> 176096e... c_fina
     }
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
         appBar: AppBar(
           centerTitle: true,
           title: Text(
@@ -53,6 +66,14 @@ class _OwnerScreenState extends State<OwnerScreen> {
    fillForm(  )
    {
      print('here');
+=======
+        appBar: func('Pet Registration Form'),
+        body: fillForm(),
+        );
+  }
+   fillForm(  )
+   {
+>>>>>>> 176096e... c_fina
    return  Form(
          key: kformKey,
          child: ListView(children: <Widget>[
@@ -65,8 +86,11 @@ class _OwnerScreenState extends State<OwnerScreen> {
            },
            icon: Icon(Icons.camera_alt),
              ),
+<<<<<<< HEAD
 
              // ),
+=======
+>>>>>>> 176096e... c_fina
            ),
            Container(
              margin: EdgeInsets.all(20),
@@ -132,7 +156,11 @@ class _OwnerScreenState extends State<OwnerScreen> {
                controller: petGender,
                autovalidate: ownerScreenModel.validateGender,
                validator: (value) {
+<<<<<<< HEAD
                  return value.isEmpty ? nullname : null;
+=======
+                 return value.isEmpty ? nullgender : null;
+>>>>>>> 176096e... c_fina
                },
                onEditingComplete: () {
                  setState(() {
@@ -180,7 +208,11 @@ class _OwnerScreenState extends State<OwnerScreen> {
                controller: petDescription,
                autovalidate: ownerScreenModel.validateDescription,
                validator: (value) {
+<<<<<<< HEAD
                  return value.isEmpty ? nullbreed : null;
+=======
+                 return value.isEmpty ? validatedescription : null;
+>>>>>>> 176096e... c_fina
                },
                onEditingComplete: () {
                  setState(() {
@@ -194,9 +226,15 @@ class _OwnerScreenState extends State<OwnerScreen> {
              color: firstcolor,
              shape: buttonborder,
              onPressed: () {
+<<<<<<< HEAD
                Scaffold.of(context).showSnackBar(
                  SnackBar(content: Center(child: CircularProgressIndicator()),)
                );
+=======
+              //  Scaffold.of(context).showSnackBar(
+              //    SnackBar(content: Center(child: CircularProgressIndicator()),)
+              //  );
+>>>>>>> 176096e... c_fina
                uploadFile(context, ownerScreenModel);
                },
              child: Text('Submit'),

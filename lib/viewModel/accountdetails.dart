@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 assignVales(accountScreenModel) {
   accountScreenModel.editName =
       TextEditingController(text: accountScreenModel.name);
+<<<<<<< HEAD
   // selection: accountScreenModel.editName.selection);
+=======
+>>>>>>> 176096e... c_fina
   accountScreenModel.editPhone.value = TextEditingValue(
       text: accountScreenModel.phone,
       selection: accountScreenModel.editPhone.selection);

@@ -1,7 +1,11 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "/Users/sahusoft/Downloads/dbdummy-master/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ms/values-ms.xml",
+=======
+            "outputFile": "/Users/sahusoft/Downloads/dbdummy-newbranch/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ms/values-ms.xml",
+>>>>>>> 176096e... c_fina
             "map": [
                 {
                     "source": "/Users/sahusoft/.gradle/caches/transforms-2/files-2.1/368f4123a1e150ee98d361e2c0150ebe/jetified-firebase-messaging-20.0.1/res/values-ms/values.xml",

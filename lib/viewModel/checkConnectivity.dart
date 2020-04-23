@@ -13,6 +13,10 @@ import 'package:flutter/material.dart';
     } 
      else {
       print("Not connected");
+<<<<<<< HEAD
+=======
+      Navigator.pushNamed(context, Routes().buyerSq);     
+>>>>>>> 176096e... c_fina
     
     }
 

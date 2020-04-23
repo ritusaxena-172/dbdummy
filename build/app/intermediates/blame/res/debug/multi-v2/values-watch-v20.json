@@ -1,7 +1,11 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "/Users/sahusoft/Downloads/dbdummy-master/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
+=======
+            "outputFile": "/Users/sahusoft/Downloads/dbdummy-newbranch/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
+>>>>>>> 176096e... c_fina
             "map": [
                 {
                     "source": "/Users/sahusoft/.gradle/caches/transforms-2/files-2.1/456348c6e00fd503d0716c2eea5bc91a/jetified-play-services-auth-16.0.1/res/values-watch-v20/values.xml",

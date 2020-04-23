@@ -1,7 +1,11 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "/Users/sahusoft/Downloads/dbdummy-master/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+=======
+            "outputFile": "/Users/sahusoft/Downloads/dbdummy-newbranch/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+>>>>>>> 176096e... c_fina
             "map": [
                 {
                     "source": "/Users/sahusoft/.gradle/caches/transforms-2/files-2.1/7da58ea23bc3b536788969864f9145ab/media-1.0.0-beta01/res/values-v24/values-v24.xml",

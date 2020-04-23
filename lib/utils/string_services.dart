@@ -6,7 +6,13 @@ final String matchpassword = "Password does not matches";
 final String validphone = "Enter a valid phone number";
 final String nullbreed = "Breed cannot be null";
 final String nullage = "Age cannot be null";
+<<<<<<< HEAD
 final String validatedescription = "Enter atleast 100 characters";
+=======
+final String nullgender=" Gerder cannot be null";
+
+final String validatedescription = "Enter atleast 10 characters";
+>>>>>>> 176096e... c_fina
 final String invalidEmail = "Your email address appears to be malformed.";
 final String invalidPassword = "Your password is wrong.";
 final String userNotFound = "User with this email doesn't exist.";

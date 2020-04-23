@@ -17,4 +17,8 @@ String accountScreen = '/accountScreen';
   String chatWith='/chat With';
   String alreadyFilled='/alreadyFilled';
   String adopterDisplay='/adopterDisplay';
+<<<<<<< HEAD
+=======
+  String buyerSq='/buyersq';
+>>>>>>> 176096e... c_fina
 }

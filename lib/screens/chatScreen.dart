@@ -48,7 +48,10 @@ class _ChatScreenState extends State<ChatScreen> {
                           Text('Here is the start of your conversation');
                           return Center(child: CircularProgressIndicator());
                         } else {
+<<<<<<< HEAD
                           // List<DocumentSnapshot> docs = snapshot.data.documents;
+=======
+>>>>>>> 176096e... c_fina
                           return StreamBuilder(
                               stream: subCollection(chatModel, context),
                               builder: (context, snapshot) {

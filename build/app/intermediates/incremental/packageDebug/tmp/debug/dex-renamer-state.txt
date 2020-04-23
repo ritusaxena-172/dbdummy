@@ -1,10 +1,20 @@
+<<<<<<< HEAD
 #Mon Apr 20 20:04:12 IST 2020
+=======
+#Fri Apr 24 00:40:34 IST 2020
+>>>>>>> 176096e... c_fina
 path.2=classes3.dex
 path.1=classes2.dex
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
+<<<<<<< HEAD
 base.2=/Users/sahusoft/Downloads/dbdummy-master/build/app/intermediates/dex/debug/mergeDexDebug/out/classes3.dex
 base.1=/Users/sahusoft/Downloads/dbdummy-master/build/app/intermediates/dex/debug/mergeDexDebug/out/classes2.dex
 base.0=/Users/sahusoft/Downloads/dbdummy-master/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+=======
+base.2=/Users/sahusoft/Downloads/dbdummy-newbranch/build/app/intermediates/dex/debug/mergeDexDebug/out/classes3.dex
+base.1=/Users/sahusoft/Downloads/dbdummy-newbranch/build/app/intermediates/dex/debug/mergeDexDebug/out/classes2.dex
+base.0=/Users/sahusoft/Downloads/dbdummy-newbranch/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+>>>>>>> 176096e... c_fina

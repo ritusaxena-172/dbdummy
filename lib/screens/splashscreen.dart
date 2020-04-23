@@ -4,12 +4,18 @@ import 'package:dbdummy/utils/color_services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 176096e... c_fina
 class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 176096e... c_fina
 class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
@@ -19,7 +25,10 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacementNamed(context, Routes().temp);
     });
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 176096e... c_fina
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 [{"name":"/Users/sahusoft/Downloads/dbdummy-master/build/app/intermediates/javac/debug/classes","index":0,"scopes":["PROJECT"],"types":["DEX_ARCHIVE"],"format":"DIRECTORY","present":true},{"name":"/Users/sahusoft/Downloads/dbdummy-master/build/app/tmp/kotlin-classes/debug","index":1,"scopes":["PROJECT"],"types":["DEX_ARCHIVE"],"format":"DIRECTORY","present":true}]
+=======
+[{"name":"/Users/sahusoft/Downloads/dbdummy-newbranch/build/app/intermediates/javac/debug/classes","index":0,"scopes":["PROJECT"],"types":["DEX_ARCHIVE"],"format":"DIRECTORY","present":true},{"name":"/Users/sahusoft/Downloads/dbdummy-newbranch/build/app/tmp/kotlin-classes/debug","index":1,"scopes":["PROJECT"],"types":["DEX_ARCHIVE"],"format":"DIRECTORY","present":true}]
+>>>>>>> 176096e... c_fina

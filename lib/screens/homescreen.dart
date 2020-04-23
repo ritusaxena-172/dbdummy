@@ -1,5 +1,6 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+<<<<<<< HEAD
 import 'package:dbdummy/components/appBar_style.dart';
 import 'package:dbdummy/components/appbar_decoration.dart';
 import 'package:dbdummy/database/currentUID.dart';
@@ -10,6 +11,13 @@ import 'package:dbdummy/routes/routes.dart';
 // import 'package:dbdummy/services/firebasestore.dart';
 // import 'package:dbdummy/services/formfilledCheck.dart';
 import 'package:dbdummy/services/sharedprefs_services.dart';
+=======
+import 'package:dbdummy/components/appbar.dart';
+import 'package:dbdummy/database/currentUID.dart';
+import 'package:dbdummy/database/sharedpreference.dart';
+import 'package:dbdummy/model/general_model.dart';
+import 'package:dbdummy/routes/routes.dart';
+>>>>>>> 176096e... c_fina
 import 'package:dbdummy/services/siginwithgoogle.dart';
 import 'package:dbdummy/utils/color_services.dart';
 import 'package:dbdummy/utils/string_services.dart';
@@ -39,6 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
     mediaQuery.width= MediaQuery.of(context).size.width;
    mediaQuery.height= MediaQuery.of(context).size.height; 
     return Scaffold(
+<<<<<<< HEAD
         appBar: AppBar(
           centerTitle: true,
           title: Text(
@@ -53,6 +62,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
               drawer: Drawer(
+=======
+        appBar: func('PawSome!'),
+        drawer: Drawer(
+>>>>>>> 176096e... c_fina
             child: ListView(
           children: <Widget>[
             UserAccountsDrawerHeader(
@@ -92,6 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     }))
           ],
         )),
+<<<<<<< HEAD
   
         
         
@@ -116,6 +130,15 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Container(
                   height: 300,
                   width: 700,
+=======
+         body: Container(
+          child: Column(children: <Widget>[
+            Align(
+              alignment: Alignment.center,
+              child: Container(
+                  height: mediaQuery.height*.4,
+                  width: mediaQuery.width,
+>>>>>>> 176096e... c_fina
                   child: Material(
                     elevation: 5.0,
                     shape: RoundedRectangleBorder(
@@ -142,14 +165,23 @@ class _HomeScreenState extends State<HomeScreen> {
                                 milliseconds: 800,
                               ),
                               dotSize: 4.0,
+<<<<<<< HEAD
                               //  dotBgColor: Colors.white
                             ))),
+=======
+                              ))),
+>>>>>>> 176096e... c_fina
                   )),
             ),
             
             Container(
+<<<<<<< HEAD
             height: 50,
             width: 390,
+=======
+            height: mediaQuery.height*.075,
+            width: mediaQuery.width,
+>>>>>>> 176096e... c_fina
             child: Center(
                 child: Text(
               ' Choose your service.',
@@ -160,9 +192,13 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             )),
           ),
+<<<<<<< HEAD
             
 
     GestureDetector(
+=======
+           GestureDetector(
+>>>>>>> 176096e... c_fina
             onTap: () {
               getUID();
                 getDetails('AcceptorDetails').then((result){
@@ -172,6 +208,7 @@ class _HomeScreenState extends State<HomeScreen> {
                },
             child: Stack(
               children: <Widget>[
+<<<<<<< HEAD
                 Container(
                   margin: EdgeInsets.fromLTRB(10, 30, 80, 5),
                   height: 100,
@@ -182,11 +219,30 @@ class _HomeScreenState extends State<HomeScreen> {
                       fit: BoxFit.fill,
                       image: AssetImage(
                         card1,
+=======
+                Align(
+                  alignment: Alignment.topLeft,
+                    child: Container(
+                    margin: EdgeInsets.only(left: mediaQuery.width*.03),
+                    height: mediaQuery.height*.1,
+                    width: mediaQuery.width*.7,
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage(
+                          card1,
+                        ),
+>>>>>>> 176096e... c_fina
                       ),
                     ),
                   ),
                 ),
                 Container(
+<<<<<<< HEAD
+=======
+                  margin: EdgeInsets.only(left: mediaQuery.width*.03),
+>>>>>>> 176096e... c_fina
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: RichText(
@@ -200,9 +256,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       textAlign: TextAlign.left,
                     ),
                   ),
+<<<<<<< HEAD
                   margin: EdgeInsets.fromLTRB(10, 30, 80, 5),
                   height: 100,
                   width: 390,
+=======
+                  height: mediaQuery.height*.1,
+                  width: mediaQuery.width*.7,
+>>>>>>> 176096e... c_fina
                   color: Colors.green.withOpacity(0.6),
                 ),
               ],
@@ -220,6 +281,7 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             child: Stack(
               children: <Widget>[
+<<<<<<< HEAD
                 Container(
                   margin: EdgeInsets.fromLTRB(80, 20, 10, 5),
                   height: 100,
@@ -230,10 +292,26 @@ class _HomeScreenState extends State<HomeScreen> {
                       fit: BoxFit.fill,
                       image: AssetImage(
                         card2,
+=======
+                Align(
+                  alignment: Alignment.topRight,
+                   child: Container(
+                     margin: EdgeInsets.only(top:mediaQuery.height*.04, right: mediaQuery.width*.03),
+                   height: mediaQuery.height*.1,
+                  width: mediaQuery.width*.7,
+                   decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage(
+                          card2,
+                        ),
+>>>>>>> 176096e... c_fina
                       ),
                     ),
                   ),
                 ),
+<<<<<<< HEAD
                 Container(
                   child: Align(
                     alignment: Alignment.centerRight,
@@ -252,6 +330,29 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 100,
                   width: 390,
                   color: Colors.pink.withOpacity(0.6),
+=======
+                Align(
+                  alignment: Alignment.topRight,
+                   child: Container(
+                      margin: EdgeInsets.only(top:mediaQuery.height*.04, right: mediaQuery.width*.03),
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: RichText(
+                        text: TextSpan(
+                            text: 'For Shelter',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontStyle: FontStyle.italic,
+                              fontFamily: 'Florsn',
+                            )),
+                        // textAlign: TextAlign.right,
+                      ),
+                    ),
+                      height: mediaQuery.height*.1,
+                    width: mediaQuery.width*.7,
+                    color: Colors.pink.withOpacity(0.6),
+                  ),
+>>>>>>> 176096e... c_fina
                 ),
               ],
             ),
